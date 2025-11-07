@@ -1,0 +1,238 @@
+---
+title: "Brand Your Docs, Apps, and ggplots Using LLMs"
+subtitle: "Introducing {brandthis}"
+author: "Umair Durrani (Data Scientist at Presage Group)"
+engine: knitr
+echo: true
+format: 
+  revealjs:
+    scrollable: true
+---
+
+## You've Just Finished Your Analysis 🎉
+
+::: {.columns}
+::: {.column width="70%"}
+- Days worth of complex analysis
+- Carefully crafted visualizations
+:::
+
+::: {.column width="30%"}
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGh6enBoNzJ5aGwwdzBxeHZzdGcwbjk4ZzFic3JjeGR6MnNvZzI0MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GbddJJKbqtY2j8QRKq/giphy.gif)
+:::
+:::
+
+:::: {.columns}
+::: {.column width="60%"}
+![](irisf1.png)
+:::
+
+::: {.column width="40%"}
+::: {.fragment .fade-up}
+- No personality! 😕
+:::
+:::
+::::
+
+
+## Where to start theming?
+
+- Think long and hard about colors, fonts, and styles  
+- Pick stuff that makes sense in the context
+
+::: {.fragment .fade-up}
+Iris flowers
+
+![](iris.jpg){width=300}
+:::
+
+
+
+## Add some colors
+
+- [HTML Theming](https://quarto.org/docs/output-formats/html-themes.html){preview-link="true"}  
+- [Revealjs Theming](https://quarto.org/docs/presentations/revealjs/themes.html){preview-link="true"}
+
+**We want these outputs:**
+
+- [Website](https://dru.quarto.pub/brandthis-demo/ml.html){preview-link="true"}   
+- [Presentation](https://dru.quarto.pub/brandthis-demo/presentation.html#/title-slide){preview-link="true"} 
+
+
+## Add some colors
+
+You need to know CSS or SCSS!
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWVjbmF5Y3FkNWU5eWc3N2lpZHloN2hxdzNmc3U2cGFibXRwYmVoaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hjKyzFBM7wstVxmhxq/giphy.gif)
+
+
+## Add some colors
+
+Use bootstrap variables 😱
+
+```{scss}
+//| code-line-numbers: 1|2-3|5|6-8
+//| eval: false
+
+/*-- scss:defaults --*/
+$body-bg: #EFEFF8;
+$navbar-bg: #6E2DAB;
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  color: $navbar-bg
+}
+```
+
+
+## Change fonts
+
+```{scss}
+//| code-line-numbers: 1-2|8-12
+//| eval: false
+
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+/*-- scss:defaults --*/
+$body-bg: #EFEFF8;
+$navbar-bg: #6E2DAB;
+
+// Base font for body text
+$font-family-sans-serif: "Quicksand", system-ui, -apple-system, sans-serif;
+
+// Font for headings
+$headings-font-family: "Quicksand", Georgia, serif;
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  color: $navbar-bg
+}
+```
+
+
+## Don't forget revealjs
+
+```{scss}
+//| code-line-numbers: 14-16|23-30
+//| eval: false
+
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+/*-- scss:defaults --*/
+$body-bg: #EFEFF8;
+$navbar-bg: #6E2DAB;
+
+// Base font for body text
+$font-family-sans-serif: "Quicksand", system-ui, -apple-system, sans-serif;
+
+// Font for headings
+$headings-font-family: "Quicksand", Georgia, serif;
+
+// Reveal.js specific heading
+$presentation-heading-font: "Quicksand", Georgia, serif;
+$presentation-heading-color: #6E2DAB;
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  color: $navbar-bg
+}
+
+.reveal h1, 
+.reveal h2, 
+.reveal h3, 
+.reveal h4, 
+.reveal h5, 
+.reveal h6 {
+  color: $navbar-bg !important;
+}
+```
+
+
+
+## Current Output
+
+![](iriss1.png)
+
+
+## `_brand.yml` makes it easy
+
+![](brand-yml-tall-color.svg)
+
+::: footer
+https://posit-dev.github.io/brand-yml/
+:::
+
+
+
+## `_brand.yml` makes it easy
+
+```yaml
+#| code-line-numbers: 1-2|3-4|5|6-13|14-23|24|25-42|43-47|48-53|54-57
+meta:
+  name: Iris Dataset
+logo: 
+  medium: logo.png
+color:
+  palette:
+    forest-green: '#1B2D0B'
+    green: '#49752E'
+    lavender: '#9B79CD'
+    purple: '#6E2DAB'
+    lilac: '#EFEFF8'
+    white: '#FFFFFF'
+    black: '#1B2D0B'
+  background: lilac
+  foreground: '#1B2D0B'
+  primary: '#6E2DAB'
+  secondary: '#49752E'
+  success: '#49752E'
+  info: '#9B79CD'
+  warning: '#FFB300'
+  danger: '#D7263D'
+  light: '#FFFFFF'
+  dark: '#1B2D0B'
+typography:
+  fonts:
+    - family: Quicksand
+      source: google
+      weight:
+        - 400
+        - 700
+      style:
+        - normal
+        - italic
+    - family: Fira Code
+      source: bunny
+      weight:
+        - 400
+        - 500
+        - 600
+      style:
+        - normal
+        - italic
+  base:
+    family: Quicksand
+    weight: 400
+    size: 16px
+    line-height: 1.5
+  headings:
+    family: Quicksand
+    weight: 700
+    style: normal
+    line-height: 1.2
+    color: '#6E2DAB'
+  monospace:
+    family: Fira Code
+    weight: 400
+    size: 0.9em
+```
+
+
+
+
+
+
+
+

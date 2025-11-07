@@ -1,0 +1,58 @@
+meta:
+  name:
+    short: brandthis
+    full: brandthis
+  link:
+    home: https://github.com/durraniu/brandthis
+logo: 
+  medium: logo.png
+color:
+  palette:
+    white: "#FFFFFF"
+    black: "#151515"
+    blue: "#1F407A"
+    green: "#78D32D"
+    yellow: "#FDD60A"
+    aliceblue: "#F0F8FF"
+  foreground: black
+  background: "#F0F8FF"
+  primary: "#1F407A"
+  success: "#78D32D"
+  info: "#1F407A"
+  warning: "#FDD60A"
+  danger: "#9A4665"
+  light: "#F0F8FF"
+  dark: "#404041"
+typography:
+  fonts:
+    - family: Oswald
+      source: google
+    - family: EB Garamond
+      source: google
+    - family: Fira Code
+      source: bunny
+      weight: [400, 500, 600]
+      style: [normal, italic]
+  base:
+    family: EB Garamond
+    weight: 400
+    line-height: 1.5
+  headings:
+    family: Oswald
+    weight: 600
+    style: normal
+    color: primary
+  monospace:
+    family: Fira Code
+    weight: 400
+  monospace-inline:
+    color: "#1F407A"
+    background-color: "#f8f9fa"
+  monospace-block:
+    color: foreground
+    background-color: background
+  link:
+    weight: 600
+    color: "#1F407A"
+    background-color: "#F0F8FF"
+    decoration: underline

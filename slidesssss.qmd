@@ -1,0 +1,906 @@
+---
+title: "Brand Your Docs, Apps, and ggplots Using LLMs"
+subtitle: "Introducing {brandthis}: Consistent Branding Made Easy"
+author: "Umair Durrani"
+format:
+  revealjs:
+    theme: dark
+    transition: slide
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    logo: ""
+    css: custom.css
+---
+
+## The Problem {background-color="#1a1a1a"}
+
+::: {.incremental}
+### You've Just Finished Your Analysis... 🎉
+
+- 📊 Beautiful Quarto documents with insightful visualizations
+- ✨ Interactive Shiny apps that showcase your findings
+- 📈 Comprehensive ggplot2 visualizations
+
+:::
+
+. . .
+
+::: {.fragment .fade-up}
+### But There's a Problem... 😕
+
+**Your products have no personality!**
+
+- Default colors everywhere
+- Generic fonts
+- No consistent branding
+- Doesn't reflect your company's identity
+:::
+
+---
+
+## The Traditional Solution {background-color="#2d1b4e"}
+
+::: {.columns}
+::: {.column width="50%"}
+### Manual Branding
+
+- Read branding guidelines PDF
+- Extract colors, fonts, logos
+- Manually create `_brand.yml`
+- Design ggplot2 themes
+- Create custom color scales
+
+:::
+
+::: {.column width="50%"}
+### The Reality
+
+⏰ **Hours** of tedious work
+
+🔄 Lots of trial and error
+
+😓 Inconsistent results
+
+🎨 Requires design expertise
+:::
+:::
+
+. . .
+
+::: {.callout-important}
+## Time-Consuming!
+Creating a complete `_brand.yml` and matching ggplot2 scales can take **hours to days**.
+:::
+
+---
+
+## Introducing {brandthis} {background-color="#4a1942"}
+
+::: {.r-fit-text}
+**AI-Powered Branding for R**
+:::
+
+. . .
+
+::: {.columns}
+::: {.column width="33%"}
+### 🤖 LLM-Powered
+Uses Google Gemini or other LLMs via {ellmer}
+:::
+
+::: {.column width="33%"}
+### ⚡ Fast
+Generate complete branding in minutes
+:::
+
+::: {.column width="33%"}
+### 🎯 Consistent
+One `_brand.yml` for all projects
+:::
+:::
+
+---
+
+## What is `_brand.yml`? {background-color="#1a3a4a"}
+
+A single YAML file that defines your brand identity:
+
+```yaml
+meta:
+  name: "My Brand"
+color:
+  palette:
+    blue: "#0067BF"
+    pink: "#E83E8C"
+  foreground: blue
+  background: white
+typography:
+  fonts:
+    - family: Montserrat
+      source: google
+```
+
+. . .
+
+::: {.callout-tip}
+## Universal Branding
+Use across **Quarto**, **Shiny**, **RMarkdown**, and **ggplot2**!
+:::
+
+---
+
+## Installation {background-color="#1a1a1a"}
+
+```r
+# Install from GitHub
+remotes::install_github("durraniu/brandthis")
+```
+
+. . .
+
+::: {.callout-note}
+## Setup API Key
+You'll need an API key from your favorite LLM provider:
+
+- `GOOGLE_API_KEY`
+- `OPENROUTER_API_KEY`
+- Or any [ellmer-supported provider](https://ellmer.tidyverse.org/)
+
+Add it to your `.Renviron` file.
+:::
+
+---
+
+## Feature 1: Create Personal Brand {background-color="#2d1b4e"}
+
+### From an Image URL
+
+```r
+personal_brand <- brandthis::create_brand(
+  prompt = "My name is John Doe.",
+  img = "https://example.com/my-photo.jpg",
+  type = "personal",
+  chat_fn = ellmer::chat_github
+)
+```
+
+. . .
+
+::: {.callout-tip}
+## How It Works
+1. Extracts colors from your image
+2. LLM generates complementary palette
+3. Suggests Google Fonts pairing
+4. Creates complete `_brand.yml`
+:::
+
+---
+
+## Feature 1: Create Personal Brand (cont.) {background-color="#2d1b4e"}
+
+### Browse for Local Images
+
+```r
+personal_brand <- brandthis::create_brand(
+  prompt = "My name is Katniss Everdeen",
+  browse = TRUE,  # Opens file browser
+  type = "personal",
+  chat_fn = ellmer::chat_google_gemini
+)
+```
+
+. . .
+
+### No Image? No Problem!
+
+```r
+personal_brand <- brandthis::create_brand(
+  prompt = "Create a brand for a data scientist 
+           who loves ocean blues and modern design",
+  type = "personal",
+  chat_fn = ellmer::chat_google_gemini
+)
+```
+
+---
+
+## Feature 2: Create Company Brand {background-color="#4a1942"}
+
+### From Branding Guidelines
+
+```r
+company_brand <- brandthis::create_brand(
+  prompt = "Company name is Walmart",
+  img = c(
+    "walmart-font.png",
+    "walmart-palette.jpeg",
+    "walmart-logo.png"
+  ),
+  type = "company",
+  chat_fn = ellmer::chat_google_gemini
+)
+```
+
+. . .
+
+::: {.callout-tip}
+## LLM Vision
+The LLM analyzes your branding guideline screenshots and extracts all relevant information!
+:::
+
+---
+
+## Generated `_brand.yml` Example {background-color="#1a3a4a"}
+
+```yaml
+meta:
+  name:
+    full: "Retro Arcade Brand"
+    short: "RetroArc"
+  link:
+    home: https://retro-arcade.posit.co
+    
+color:
+  palette:
+    pink: "#E83E8C"
+    blue: "#0067BF"
+    cyan: "#17A2B8"
+    teal: "#20C997"
+    green: "#28A745"
+    yellow: "#FFD700"
+  foreground: pink
+  background: blue
+  
+typography:
+  fonts:
+    - family: Press Start 2P
+      source: google
+```
+
+---
+
+## Feature 3: Suggest Color Scales {background-color="#2d1b4e"}
+
+### Find Similar Palettes
+
+```r
+suggested_scales <- brandthis::suggest_color_scales(
+  personal_brand, 
+  pkg = "paletteer"
+)
+```
+
+. . .
+
+::: {.callout-tip}
+## How It Works
+- Uses RAG (Retrieval Augmented Generation)
+- Searches through `paletteer` or `ggsci` packages
+- Finds palettes similar to your brand colors
+- Returns ready-to-use ggplot2 scales
+:::
+
+---
+
+## Feature 3: Suggest Color Scales (cont.) {background-color="#2d1b4e"}
+
+### Available Package Options
+
+::: {.columns}
+::: {.column width="50%"}
+#### paletteer
+```r
+suggest_color_scales(
+  brand_yml,
+  pkg = "paletteer"
+)
+```
+Access to 2500+ palettes!
+:::
+
+::: {.column width="50%"}
+#### ggsci
+```r
+suggest_color_scales(
+  brand_yml,
+  pkg = "ggsci"
+)
+```
+Scientific journal palettes
+:::
+:::
+
+---
+
+## Feature 4: Create Custom Palettes {background-color="#4a1942"}
+
+### Generate Multiple Palette Types
+
+```r
+color_palettes <- brandthis::create_color_palette(
+  personal_brand
+)
+```
+
+. . .
+
+Creates:
+
+- 2 **discrete** palettes
+- 3 **sequential** palettes  
+- 2 **diverging** palettes
+
+. . .
+
+::: {.callout-tip}
+All palettes harmonize with your brand colors!
+:::
+
+---
+
+## The createBranding App 🚀 {background-color="#1a1a1a"}
+
+### Interactive Shiny Interface
+
+```r
+brandthis::run_brand_app()
+```
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+### Features
+- Upload images or provide URLs
+- Enter brand information
+- Generate `_brand.yml` 
+- Edit in real-time
+- Preview results instantly
+:::
+
+::: {.column width="50%"}
+### Benefits
+- Visual feedback
+- Iterative refinement
+- Download final files
+- No coding required!
+:::
+:::
+
+---
+
+## createBranding App Demo {background-color="#2d1b4e"}
+
+### Workflow
+
+::: {.incremental}
+1. **Input**: Upload branding guidelines or image
+2. **Prompt**: Describe your brand
+3. **Generate**: LLM creates `_brand.yml`
+4. **Edit**: Modify in the app
+5. **Create**: Generate color palettes
+6. **Download**: Get your files!
+:::
+
+. . .
+
+::: {.callout-note}
+## See It In Action
+The app provides immediate visual feedback as you create and refine your brand!
+:::
+
+---
+
+## Technical Magic ✨ {background-color="#1a3a4a"}
+
+### Powered by {ellmer}
+
+::: {.incremental}
+- **Structured Output**: Ensures valid YAML generation
+- **Tool Registration**: Checks color contrast, suggests fonts
+- **Multiple Providers**: Google Gemini, OpenAI, Anthropic, etc.
+- **Vision Capabilities**: Analyze branding guideline images
+:::
+
+. . .
+
+```r
+# Behind the scenes
+client_brand$register_tool(get_fonts_combination_tool)
+client_brand$register_tool(check_contrast_tool)
+```
+
+---
+
+## Use Cases {background-color="#4a1942"}
+
+::: {.columns}
+::: {.column width="50%"}
+### Personal Branding
+- Portfolio websites
+- Personal blogs
+- Academic presentations
+- Data science projects
+:::
+
+::: {.column width="50%"}
+### Company Branding
+- Internal reports
+- Client deliverables
+- Shiny dashboards
+- Quarto websites
+:::
+:::
+
+. . .
+
+::: {.callout-tip}
+## One Brand, Everywhere
+Consistent branding across all your R outputs!
+:::
+
+---
+
+## Real-World Example {background-color="#2d1b4e"}
+
+### Before {brandthis}
+
+```r
+# Manual color picking
+my_colors <- c("#123456", "#789ABC", ...)
+
+# Custom ggplot theme
+theme_custom <- theme_minimal() + 
+  theme(text = element_text(family = "Arial"))
+  
+# Repeat for every project 😢
+```
+
+. . .
+
+### After {brandthis}
+
+```r
+# One time setup
+brand <- create_brand(...)
+
+# Use everywhere! 🎉
+# Automatically themed Quarto docs
+# Branded Shiny apps
+# Consistent ggplots
+```
+
+---
+
+## Benefits Summary {background-color="#1a1a1a"}
+
+::: {.r-fit-text}
+**Why Use {brandthis}?**
+:::
+
+::: {.incremental}
+- ⚡ **Speed**: Minutes instead of hours
+- 🎨 **Professional**: LLM-designed color palettes
+- 🔄 **Consistent**: One file for all projects
+- 🤖 **Smart**: AI understands design principles
+- 🎯 **Accessible**: Checks color contrast automatically
+- 📦 **Integrated**: Works with existing R ecosystem
+:::
+
+---
+
+## Live Example: Personal Brand {background-color="#4a1942"}
+
+```r
+# Create from a nature photo
+my_brand <- brandthis::create_brand(
+  prompt = "My name is Alex. I'm a marine biologist.",
+  img = "https://example.com/ocean-sunset.jpg",
+  type = "personal",
+  chat_fn = ellmer::chat_google_gemini
+)
+
+# View the brand
+my_brand
+```
+
+. . .
+
+::: {.callout-note}
+## Result
+Complete `_brand.yml` with ocean-inspired colors, appropriate fonts, and accessibility-checked contrast ratios!
+:::
+
+---
+
+## Live Example: Company Brand {background-color="#2d1b4e"}
+
+```r
+# From branding guidelines
+corp_brand <- brandthis::create_brand(
+  prompt = "Tech startup focusing on sustainability",
+  img = c(
+    "brand-colors.png",
+    "logo-usage.png",
+    "typography-guide.png"
+  ),
+  type = "company",
+  chat_fn = ellmer::chat_google_gemini
+)
+```
+
+. . .
+
+::: {.callout-tip}
+## LLM Extracts Everything
+Colors, fonts, spacing, logo specifications—all automatically parsed from your images!
+:::
+
+---
+
+## Color Palette Generation {background-color="#1a3a4a"}
+
+```r
+# Generate custom palettes
+palettes <- create_color_palette(my_brand)
+
+# Returns:
+# $discrete1, $discrete2
+# $sequential1, $sequential2, $sequential3
+# $diverging1, $diverging2
+```
+
+. . .
+
+### Use in ggplot2
+
+```r
+scale_color_manual(values = palettes$discrete1)
+scale_fill_gradientn(colors = palettes$sequential1)
+```
+
+---
+
+## Finding Similar Scales {background-color="#4a1942"}
+
+```r
+# Get suggestions from paletteer
+suggestions <- suggest_color_scales(
+  my_brand,
+  pkg = "paletteer",
+  top_k = 8
+)
+```
+
+. . .
+
+::: {.callout-tip}
+## RAG-Powered Search
+Uses a knowledge store with embeddings to find the most similar existing palettes to your brand!
+:::
+
+---
+
+## Integration with Quarto {background-color="#2d1b4e"}
+
+### Use Your Brand in Quarto
+
+```yaml
+---
+title: "My Analysis"
+format:
+  html:
+    theme: _brand.yml
+---
+```
+
+. . .
+
+::: {.callout-note}
+## Automatic Styling
+Your colors, fonts, and design are automatically applied to all Quarto outputs!
+:::
+
+---
+
+## Integration with Shiny {background-color="#1a3a4a"}
+
+### Brand Your Shiny Apps
+
+```r
+ui <- fluidPage(
+  theme = bslib::bs_theme_brand_yml("_brand.yml"),
+  # Your UI elements automatically styled!
+)
+```
+
+. . .
+
+::: {.callout-tip}
+## Consistent Look
+Same branding across docs, apps, and plots!
+:::
+
+---
+
+## Behind the Scenes: LLM Workflow {background-color="#4a1942"}
+
+::: {.incremental}
+1. **Input Processing**: Images analyzed via vision API
+2. **Color Extraction**: Palette created from images
+3. **LLM Generation**: Structured output creates YAML
+4. **Tool Calls**: 
+   - `get_fonts_combination()` - Google Fonts pairing
+   - `check_contrast()` - Accessibility validation
+5. **Output**: Valid `_brand.yml` ready to use!
+:::
+
+---
+
+## Structured Output Magic {background-color="#2d1b4e"}
+
+### {ellmer} Ensures Valid YAML
+
+```r
+# Define the expected structure
+palette_type <- ellmer::type_object(
+  "Color palettes for ggplot2",
+  discrete1 = ellmer::type_array(
+    "Discrete palette",
+    items = ellmer::type_string()
+  ),
+  sequential1 = ellmer::type_array(
+    "Sequential palette",
+    items = ellmer::type_string()
+  )
+)
+
+# LLM returns structured data
+client$chat_structured(prompt, type = palette_type)
+```
+
+---
+
+## Accessibility Built-In {background-color="#1a3a4a"}
+
+### Automatic Contrast Checking
+
+```r
+# The check_contrast_tool automatically validates
+# foreground/background color combinations
+
+check_contrast(
+  fg_col = "#E83E8C",  # Your brand color
+  bg_col = "#FFFFFF"   # Background
+)
+```
+
+. . .
+
+::: {.callout-important}
+## WCAG Compliance
+Ensures your brand meets accessibility standards for text readability!
+:::
+
+---
+
+## Current Limitations {background-color="#4a1942"}
+
+::: {.callout-warning}
+## Important Notes
+
+- Not compatible with **ggplot2 4.0.0** (use earlier version)
+- Requires LLM API key and credits
+- Image URLs only work for `type = "personal"`
+- Best results with clear branding guidelines
+:::
+
+---
+
+## Future Directions {background-color="#2d1b4e"}
+
+::: {.incremental}
+- 🎨 Support for more design elements
+- 📊 Advanced ggplot2 theme generation
+- 🔄 Brand version control
+- 🌐 Brand sharing and templates
+- 📱 Enhanced mobile preview
+- 🤝 Collaboration features
+:::
+
+---
+
+## Getting Started Today {background-color="#1a3a4a"}
+
+### Quick Start
+
+::: {.incremental}
+1. Install: `remotes::install_github("durraniu/brandthis")`
+2. Set API key in `.Renviron`
+3. Run the app: `brandthis::run_brand_app()`
+4. Generate your brand!
+:::
+
+. . .
+
+::: {.callout-tip}
+## Resources
+- GitHub: [github.com/durraniu/brandthis](https://github.com/durraniu/brandthis)
+- {ellmer} docs: [ellmer.tidyverse.org](https://ellmer.tidyverse.org/)
+- `_brand.yml` spec: [posit-dev.github.io/brand-yml](https://posit-dev.github.io/brand-yml/)
+:::
+
+---
+
+## Demo Time! {background-color="#4a1942"}
+
+::: {.r-fit-text}
+Let's see {brandthis} in action! 🎬
+:::
+
+. . .
+
+### What We'll See:
+1. Launch the createBranding app
+2. Upload a branding image
+3. Generate `_brand.yml`
+4. Create color palettes
+5. Preview results
+
+---
+
+## Example Output {background-color="#2d1b4e"}
+
+### From Image to Brand
+
+::: {.columns}
+::: {.column width="50%"}
+**Input:**
+- Nature photo (blues & greens)
+- Name: "EcoData Labs"
+- Focus: Environmental analysis
+:::
+
+::: {.column width="50%"}
+**Output:**
+- Ocean-inspired palette
+- Clean, modern fonts
+- 7 coordinated colors
+- Multiple palette types
+- Accessibility-checked
+:::
+:::
+
+---
+
+## Community & Contribution {background-color="#1a3a4a"}
+
+### Join the Development!
+
+- 🐛 Report issues on GitHub
+- 💡 Suggest new features
+- 🤝 Contribute code
+- 📚 Improve documentation
+- 🌟 Star the repo!
+
+. . .
+
+::: {.callout-note}
+## Open Source
+{brandthis} is open source and welcomes contributions!
+:::
+
+---
+
+## Key Takeaways {background-color="#4a1942"}
+
+::: {.r-fit-text}
+**Remember These Points**
+:::
+
+::: {.incremental}
+1. **One file** (`_brand.yml`) brands everything
+2. **AI-powered** generation saves hours
+3. **Consistent** branding across R ecosystem
+4. **Accessible** design built-in
+5. **Easy** to use with Shiny app
+6. **Flexible** for personal or company use
+:::
+
+---
+
+## Thank You! {background-color="#1a1a1a"}
+
+::: {.r-fit-text}
+Questions?
+:::
+
+### Connect
+
+- 📧 GitHub: @durraniu
+- 📦 Package: github.com/durraniu/brandthis
+- 🌐 More: Check out the createBranding app!
+
+. . .
+
+::: {.callout-tip}
+## Try It Today
+`remotes::install_github("durraniu/brandthis")`
+
+Then run: `brandthis::run_brand_app()`
+:::
+
+---
+
+## Bonus: Tips & Tricks {background-color="#2d1b4e"}
+
+### Getting the Best Results
+
+::: {.incremental}
+- 📸 Use high-quality images with clear colors
+- 📝 Be specific in your prompts
+- 🎨 Mention design preferences (modern, classic, playful)
+- 🔄 Iterate! Regenerate if needed
+- ✅ Always check accessibility
+- 💾 Save your `_brand.yml` in version control
+:::
+
+---
+
+## Bonus: Advanced Usage {background-color="#1a3a4a"}
+
+### Custom LLM Providers
+
+```r
+# Use different LLM providers via ellmer
+create_brand(
+  prompt = "...",
+  chat_fn = ellmer::chat_openai,
+  model = "gpt-4"
+)
+
+create_brand(
+  prompt = "...",
+  chat_fn = ellmer::chat_anthropic,
+  model = "claude-3-opus"
+)
+```
+
+---
+
+## Bonus: Combining with Other Tools {background-color="#4a1942"}
+
+### Integrate with Your Workflow
+
+```r
+# Create brand
+brand <- create_brand(...)
+
+# Use with bslib for Shiny
+theme <- bslib::bs_theme_brand_yml("_brand.yml")
+
+# Use with thematic for ggplot2
+thematic::thematic_on()
+
+# Use in Quarto _quarto.yml
+# theme: _brand.yml
+```
+
+---
+
+## {background-color="#1a1a1a"}
+
+::: {.r-fit-text}
+**{brandthis}**
+
+AI-Powered Branding for R
+:::
+
+### Your Brand, Everywhere
+
+Quarto • Shiny • ggplot2 • RMarkdown
+
+::: {.fragment}
+**Make it yours.** 🎨✨
+:::
