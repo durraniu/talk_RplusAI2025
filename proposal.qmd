@@ -1,8 +1,0 @@
----
-title: "R+AI Talk Proposal"
-format: pdf
----
-
-## Brand your docs, apps, and ggplots using LLMs
-
-A single `_brand.yml` file enables you to consistently use company branding across all of your projects. However, it takes a significant amount of time to develop a `_brand.yml` file and {ggplot2} scales & themes that follow company branding. In this talk, I'll introduce you to the `createBranding` shiny app that enables you to rapidly create and iterate over `_brand.yml` and {ggplot2} goodies using Large Language Models (LLMs). The app takes in the screenshot(s) of company branding guidelines and user instructions, provides them to the Google Gemini model via {ellmer}, and generates an editable `_brand.yml` file. Subsequently, the app creates a colour palette and {ggplot2} scales & theme based on the saved `_brand.yml` file. This workflow is possible due to the structured output feature of {ellmer}. 

@@ -11,17 +11,6 @@ format:
     width: 1200
 ---
 
-```{css}
-.no-scroll .slide-background-content {
-  overflow: hidden !important;
-}
-
-.no-scroll {
-  overflow: hidden !important;
-}
-```
-
-
 ## You've Just Finished Your Analysis 🎉
 
 ::: {.columns}
@@ -430,7 +419,11 @@ hexsession::make_tile(packages=c("ragnar","ggsci","paletteer"))
 ```
 
 
-## RAG
+## Retrieval-Augmented Generation (RAG)
+
+- **Store information** - Documents, articles, or data are broken into chunks and stored in a searchable database
+- **Retrieve relevant info** - When you ask a question, the system searches for the most relevant chunks
+- **Generate an answer** - The LLM reads those chunks and uses them to write an accurate, informed response
 
 
 ## How `suggest_color_scales` works?
@@ -522,10 +515,10 @@ theme_set(brand.yml::theme_brand_ggplot2(
 
 # 1. Colorblind-friendly Okabe-Ito palette
 p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
-  geom_point(size = 3, alpha = 0.8) +
-  scale_color_paletteer_d(palette = "khroma::dark", dynamic = 
-FALSE) +
-  theme(legend.position = "bottom")
+  geom_point(size = 3, alpha = 0.8) 
+  
+p11 <- p1 + scale_color_paletteer_d(palette = "khroma::dark", dynamic = 
+FALSE)
 
 # ============================================================================
 # SEQUENTIAL PALETTES
@@ -540,9 +533,9 @@ df_seq <- data.frame(
 )
 
 p3 <- ggplot(df_seq, aes(x = x, y = y, fill = z)) +
-  geom_tile() +
-  scale_color_paletteer_c(palette = "scico::hawaii") +
-  theme(legend.position = "right")
+  geom_tile() 
+  
+p33 <- p3 + scale_color_paletteer_c(palette = "scico::hawaii")
 
 
 # ============================================================================
@@ -558,9 +551,9 @@ df_div <- data.frame(
 )
 
 p6 <- ggplot(df_div, aes(x = x, y = y, fill = value)) +
-  geom_tile() +
-  scale_fill_paletteer_c(palette = "scico::vik") +
-  theme(legend.position = "right")
+  geom_tile()
+
+p66 <- p6 + scale_fill_paletteer_c(palette = "scico::vik")
 
 
 # ============================================================================
@@ -569,13 +562,155 @@ p6 <- ggplot(df_div, aes(x = x, y = y, fill = value)) +
 
 # Arrange plots in a grid
 
-combined <- p1 + p3 + p6 
+combined <- p11 + p33 + p66 
 
 combined
 ```
 
 
-## Suggested scales
+# Create color palettes
 
 
-## Suggested scales
+## Structured Output
+
+```r
+brandthis::create_color_palette(brand.yml::read_brand_yml())
+```
+
+Instead of:
+
+> Here are your requested color palettes:
+Discrete: "#1F407A" "#78D32D" "#FDD60A" "#9A4665" "#8A2BE2" "#008080"
+Sequential: "#F0F8FF" "#B0C4DE" "#8DA0C8" "#6C7BAF" "#4B5696" "#2F367F"
+...
+
+::: {.fragment}
+Structured output:
+
+```r
+cp <- list(
+  discrete1 = c("#1F407A", "#78D32D", "#FDD60A", "#9A4665", "#8A2BE2", "#008080"), 
+  sequential1 = c("#F0F8FF", "#B0C4DE", "#8DA0C8", "#6C7BAF", "#4B5696", 
+                "#2F367F", "#1F407A", "#15305C", "#0B203D"),  
+  diverging1 = c("#1F407A", "#4B6B9B", "#7A96BC", "#A9C1DD", "#F0F8FF", 
+                "#DBC5CE", "#BF97A4", "#9A4665")
+)
+```
+:::
+
+
+## Using color palettes
+
+```{r}
+#| echo: false
+ 
+cp <- list(
+  discrete1 = c("#1F407A", "#78D32D", "#FDD60A", "#9A4665", "#8A2BE2", "#008080"), 
+  sequential1 = c("#F0F8FF", "#B0C4DE", "#8DA0C8", "#6C7BAF", "#4B5696", 
+                "#2F367F", "#1F407A", "#15305C", "#0B203D"),  
+  diverging1 = c("#1F407A", "#4B6B9B", "#7A96BC", "#A9C1DD", "#F0F8FF", 
+                "#DBC5CE", "#BF97A4", "#9A4665")
+)
+
+p111 <- p1 + scale_color_manual(values = cp$discrete1)
+p333 <- p3 + scale_fill_gradientn(colors = cp$sequential1)
+p666 <- p6 + scale_fill_gradientn(colors = cp$diverging1)
+
+combined2 <- p111 + p333 + p666 
+
+combined2
+```
+
+## How `create_color_palette` works?
+
+```{r}
+#| eval: false
+#| code-line-numbers: 1-3|5-10|12-16|18-48|18|19|20-23|44-47|50-54
+create_color_palette <- function(brand_yml,
+                                chat_fn = ellmer::chat_google_gemini,
+                                 ...){
+
+  semantic_colors_list <- semantic_colors_as_hex_codes(brand_yml$color)
+  # Make one string
+  semantic_colors <- paste(names(semantic_colors_list),
+                           semantic_colors_list,
+                           sep = "=",
+                           collapse = ", ")
+
+  client_ccp <- make_chat(
+    chat_fn,
+    system_prompt = system_prompt_ccp,
+    ...
+  )
+
+  palette_type <- ellmer::type_object(
+    "A collection of color palettes for ggplot2",
+    discrete1 = ellmer::type_array(
+      "First discrete palette: a list of color hex codes without names or comments.",
+      items = ellmer::type_string()
+    ),
+    discrete2 = ellmer::type_array(
+      "Second discrete palette: a list of color hex codes without names or comments.",
+      items = ellmer::type_string()
+    ),
+    sequential1 = ellmer::type_array(
+      "First sequential palette: a list of color hex codes without names or comments.",
+      items = ellmer::type_string()
+    ),
+    sequential2 = ellmer::type_array(
+      "Second sequential palette: a list of color hex codes without names or comments.",
+      items = ellmer::type_string()
+    ),
+    sequential3 = ellmer::type_array(
+      "Third sequential palette: a list of color hex codes without names or comments.",
+      items = ellmer::type_string()
+    ),
+    diverging1 = ellmer::type_array(
+      "First diverging palette: a list of color hex codes without names or comments.",
+      items = ellmer::type_string()
+    ),
+    diverging2 = ellmer::type_array(
+      "Second diverging palette: a list of color hex codes without names or comments.",
+      items = ellmer::type_string()
+    )
+  )
+
+  client_ccp$chat_structured(
+    semantic_colors,
+    type = palette_type,
+    echo = FALSE
+  )
+
+}
+```
+
+
+## Benefits Summary {background-color="#1a1a1a"}
+
+::: {.r-fit-text}
+**Why Use {brandthis}?**
+:::
+
+::: {.incremental}
+- ⚡ **Speed**: Minutes instead of hours
+- 🎨 **Professional**: LLM-designed color palettes
+- 🔄 **Consistent**: One file for all projects
+- 🤖 **Smart**: AI understands design principles
+:::
+
+
+## And done!
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWtpb2FhZTdhZHQ0NmVnMWIzcnAxYTJ0Z25lODRkOGhrbGI2c3l4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JFyH9XrzZh9pAjx1HN/giphy.gif)
+
+
+## Thank You! {background-color="#1a1a1a"}
+
+Questions?
+
+### Connect
+
+- 📧 GitHub: @durraniu
+- 🦋 Blueskyy: @transport-talk.bsky.social
+- 📦 Package: github.com/durraniu/brandthis
+- 🌐 More: Check out the createBranding app (`brandthis::run_brand_app()`)

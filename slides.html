@@ -205,27 +205,6 @@ Umair Durrani (Data Scientist at Presage Group)
 </div>
 
 </section>
-<section class="slide level2">
-
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb1-1"><a href=""></a><span class="fu">.no-scroll</span> <span class="fu">.slide-background-content</span> {</span>
-<span id="cb1-2"><a href=""></a>  <span class="kw">overflow</span><span class="ch">:</span> <span class="dv">hidden</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb1-3"><a href=""></a>}</span>
-<span id="cb1-4"><a href=""></a></span>
-<span id="cb1-5"><a href=""></a><span class="fu">.no-scroll</span> {</span>
-<span id="cb1-6"><a href=""></a>  <span class="kw">overflow</span><span class="ch">:</span> <span class="dv">hidden</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb1-7"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<style type="text/css">
-.no-scroll .slide-background-content {
-  overflow: hidden !important;
-}
-
-.no-scroll {
-  overflow: hidden !important;
-}
-</style>
-</div>
-</section>
 <section id="youve-just-finished-your-analysis" class="slide level2">
 <h2>You’ve Just Finished Your Analysis 🎉</h2>
 <div class="columns">
@@ -283,20 +262,42 @@ Umair Durrani (Data Scientist at Presage Group)
 <h2>Add some colors</h2>
 <p>Use bootstrap variables 😱</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-code-line-numbers="1|2-3|5|6-8"><pre class="sourceCode numberSource scss number-lines code-with-copy"><code class="sourceCode scss"><span id="cb2-1"><a href=""></a><span class="co">/*-- scss:defaults --*/</span></span>
-<span id="cb2-2"><a href=""></a><span class="va">$body-bg</span>: <span class="cn">#EFEFF8</span><span class="op">;</span></span>
-<span id="cb2-3"><a href=""></a><span class="va">$navbar-bg</span>: <span class="cn">#6E2DAB</span><span class="op">;</span></span>
-<span id="cb2-4"><a href=""></a></span>
-<span id="cb2-5"><a href=""></a><span class="co">/*-- scss:rules --*/</span></span>
-<span id="cb2-6"><a href=""></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6 {</span>
-<span id="cb2-7"><a href=""></a>  <span class="kw">color</span>: <span class="va">$navbar-bg</span></span>
-<span id="cb2-8"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1|2-3|5|6-8"><pre class="sourceCode numberSource scss number-lines code-with-copy"><code class="sourceCode scss"><span id="cb1-1"><a href=""></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb1-2"><a href=""></a><span class="va">$body-bg</span>: <span class="cn">#EFEFF8</span><span class="op">;</span></span>
+<span id="cb1-3"><a href=""></a><span class="va">$navbar-bg</span>: <span class="cn">#6E2DAB</span><span class="op">;</span></span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb1-6"><a href=""></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6 {</span>
+<span id="cb1-7"><a href=""></a>  <span class="kw">color</span>: <span class="va">$navbar-bg</span></span>
+<span id="cb1-8"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="change-fonts" class="slide level2">
 <h2>Change fonts</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="1-2|8-12"><pre class="sourceCode numberSource scss number-lines code-with-copy"><code class="sourceCode scss"><span id="cb3-1"><a href=""></a><span class="co">// Import fonts</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-code-line-numbers="1-2|8-12"><pre class="sourceCode numberSource scss number-lines code-with-copy"><code class="sourceCode scss"><span id="cb2-1"><a href=""></a><span class="co">// Import fonts</span></span>
+<span id="cb2-2"><a href=""></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb2-3"><a href=""></a></span>
+<span id="cb2-4"><a href=""></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb2-5"><a href=""></a><span class="va">$body-bg</span>: <span class="cn">#EFEFF8</span><span class="op">;</span></span>
+<span id="cb2-6"><a href=""></a><span class="va">$navbar-bg</span>: <span class="cn">#6E2DAB</span><span class="op">;</span></span>
+<span id="cb2-7"><a href=""></a></span>
+<span id="cb2-8"><a href=""></a><span class="co">// Base font for body text</span></span>
+<span id="cb2-9"><a href=""></a><span class="va">$font-family-sans-serif</span>: <span class="st">"Quicksand"</span><span class="op">,</span> <span class="dv">system-ui</span><span class="op">,</span> -apple-system<span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb2-10"><a href=""></a></span>
+<span id="cb2-11"><a href=""></a><span class="co">// Font for headings</span></span>
+<span id="cb2-12"><a href=""></a><span class="va">$headings-font-family</span>: <span class="st">"Quicksand"</span><span class="op">,</span> Georgia<span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
+<span id="cb2-13"><a href=""></a></span>
+<span id="cb2-14"><a href=""></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb2-15"><a href=""></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6 {</span>
+<span id="cb2-16"><a href=""></a>  <span class="kw">color</span>: <span class="va">$navbar-bg</span></span>
+<span id="cb2-17"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="dont-forget-revealjs" class="slide level2">
+<h2>Don’t forget revealjs</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="14-16|23-30"><pre class="sourceCode numberSource scss number-lines code-with-copy"><code class="sourceCode scss"><span id="cb3-1"><a href=""></a><span class="co">// Import fonts</span></span>
 <span id="cb3-2"><a href=""></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span>
 <span id="cb3-3"><a href=""></a></span>
 <span id="cb3-4"><a href=""></a><span class="co">/*-- scss:defaults --*/</span></span>
@@ -309,45 +310,23 @@ Umair Durrani (Data Scientist at Presage Group)
 <span id="cb3-11"><a href=""></a><span class="co">// Font for headings</span></span>
 <span id="cb3-12"><a href=""></a><span class="va">$headings-font-family</span>: <span class="st">"Quicksand"</span><span class="op">,</span> Georgia<span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
 <span id="cb3-13"><a href=""></a></span>
-<span id="cb3-14"><a href=""></a><span class="co">/*-- scss:rules --*/</span></span>
-<span id="cb3-15"><a href=""></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6 {</span>
-<span id="cb3-16"><a href=""></a>  <span class="kw">color</span>: <span class="va">$navbar-bg</span></span>
-<span id="cb3-17"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="dont-forget-revealjs" class="slide level2">
-<h2>Don’t forget revealjs</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="14-16|23-30"><pre class="sourceCode numberSource scss number-lines code-with-copy"><code class="sourceCode scss"><span id="cb4-1"><a href=""></a><span class="co">// Import fonts</span></span>
-<span id="cb4-2"><a href=""></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb4-3"><a href=""></a></span>
-<span id="cb4-4"><a href=""></a><span class="co">/*-- scss:defaults --*/</span></span>
-<span id="cb4-5"><a href=""></a><span class="va">$body-bg</span>: <span class="cn">#EFEFF8</span><span class="op">;</span></span>
-<span id="cb4-6"><a href=""></a><span class="va">$navbar-bg</span>: <span class="cn">#6E2DAB</span><span class="op">;</span></span>
-<span id="cb4-7"><a href=""></a></span>
-<span id="cb4-8"><a href=""></a><span class="co">// Base font for body text</span></span>
-<span id="cb4-9"><a href=""></a><span class="va">$font-family-sans-serif</span>: <span class="st">"Quicksand"</span><span class="op">,</span> <span class="dv">system-ui</span><span class="op">,</span> -apple-system<span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb4-10"><a href=""></a></span>
-<span id="cb4-11"><a href=""></a><span class="co">// Font for headings</span></span>
-<span id="cb4-12"><a href=""></a><span class="va">$headings-font-family</span>: <span class="st">"Quicksand"</span><span class="op">,</span> Georgia<span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
-<span id="cb4-13"><a href=""></a></span>
-<span id="cb4-14"><a href=""></a><span class="co">// Reveal.js specific heading</span></span>
-<span id="cb4-15"><a href=""></a><span class="va">$presentation-heading-font</span>: <span class="st">"Quicksand"</span><span class="op">,</span> Georgia<span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
-<span id="cb4-16"><a href=""></a><span class="va">$presentation-heading-color</span>: <span class="cn">#6E2DAB</span><span class="op">;</span></span>
-<span id="cb4-17"><a href=""></a></span>
-<span id="cb4-18"><a href=""></a><span class="co">/*-- scss:rules --*/</span></span>
-<span id="cb4-19"><a href=""></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6 {</span>
-<span id="cb4-20"><a href=""></a>  <span class="kw">color</span>: <span class="va">$navbar-bg</span></span>
-<span id="cb4-21"><a href=""></a>}</span>
-<span id="cb4-22"><a href=""></a></span>
-<span id="cb4-23"><a href=""></a><span class="fu">.reveal</span> h1<span class="op">,</span> </span>
-<span id="cb4-24"><a href=""></a><span class="fu">.reveal</span> h2<span class="op">,</span> </span>
-<span id="cb4-25"><a href=""></a><span class="fu">.reveal</span> h3<span class="op">,</span> </span>
-<span id="cb4-26"><a href=""></a><span class="fu">.reveal</span> h4<span class="op">,</span> </span>
-<span id="cb4-27"><a href=""></a><span class="fu">.reveal</span> h5<span class="op">,</span> </span>
-<span id="cb4-28"><a href=""></a><span class="fu">.reveal</span> h6 {</span>
-<span id="cb4-29"><a href=""></a>  <span class="kw">color</span>: <span class="va">$navbar-bg</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb4-30"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-14"><a href=""></a><span class="co">// Reveal.js specific heading</span></span>
+<span id="cb3-15"><a href=""></a><span class="va">$presentation-heading-font</span>: <span class="st">"Quicksand"</span><span class="op">,</span> Georgia<span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
+<span id="cb3-16"><a href=""></a><span class="va">$presentation-heading-color</span>: <span class="cn">#6E2DAB</span><span class="op">;</span></span>
+<span id="cb3-17"><a href=""></a></span>
+<span id="cb3-18"><a href=""></a><span class="co">/*-- scss:rules --*/</span></span>
+<span id="cb3-19"><a href=""></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6 {</span>
+<span id="cb3-20"><a href=""></a>  <span class="kw">color</span>: <span class="va">$navbar-bg</span></span>
+<span id="cb3-21"><a href=""></a>}</span>
+<span id="cb3-22"><a href=""></a></span>
+<span id="cb3-23"><a href=""></a><span class="fu">.reveal</span> h1<span class="op">,</span> </span>
+<span id="cb3-24"><a href=""></a><span class="fu">.reveal</span> h2<span class="op">,</span> </span>
+<span id="cb3-25"><a href=""></a><span class="fu">.reveal</span> h3<span class="op">,</span> </span>
+<span id="cb3-26"><a href=""></a><span class="fu">.reveal</span> h4<span class="op">,</span> </span>
+<span id="cb3-27"><a href=""></a><span class="fu">.reveal</span> h5<span class="op">,</span> </span>
+<span id="cb3-28"><a href=""></a><span class="fu">.reveal</span> h6 {</span>
+<span id="cb3-29"><a href=""></a>  <span class="kw">color</span>: <span class="va">$navbar-bg</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb3-30"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="current-output" class="slide level2">
@@ -364,63 +343,63 @@ Umair Durrani (Data Scientist at Presage Group)
 <section id="brand.yml-makes-it-easy-1" class="slide level2">
 <h2><code>_brand.yml</code> makes it easy</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="1-2|3-4|5|6-13|14-23|24|25-42|43-47|48-53|54-57"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href=""></a><span class="fu">meta</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href=""></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Iris Dataset</span></span>
-<span id="cb5-3"><a href=""></a><span class="fu">logo</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb5-4"><a href=""></a><span class="at">  </span><span class="fu">medium</span><span class="kw">:</span><span class="at"> logo.png</span></span>
-<span id="cb5-5"><a href=""></a><span class="fu">color</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href=""></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
-<span id="cb5-7"><a href=""></a><span class="at">    </span><span class="fu">forest-green</span><span class="kw">:</span><span class="at"> </span><span class="st">'#1B2D0B'</span></span>
-<span id="cb5-8"><a href=""></a><span class="at">    </span><span class="fu">green</span><span class="kw">:</span><span class="at"> </span><span class="st">'#49752E'</span></span>
-<span id="cb5-9"><a href=""></a><span class="at">    </span><span class="fu">lavender</span><span class="kw">:</span><span class="at"> </span><span class="st">'#9B79CD'</span></span>
-<span id="cb5-10"><a href=""></a><span class="at">    </span><span class="fu">purple</span><span class="kw">:</span><span class="at"> </span><span class="st">'#6E2DAB'</span></span>
-<span id="cb5-11"><a href=""></a><span class="at">    </span><span class="fu">lilac</span><span class="kw">:</span><span class="at"> </span><span class="st">'#EFEFF8'</span></span>
-<span id="cb5-12"><a href=""></a><span class="at">    </span><span class="fu">white</span><span class="kw">:</span><span class="at"> </span><span class="st">'#FFFFFF'</span></span>
-<span id="cb5-13"><a href=""></a><span class="at">    </span><span class="fu">black</span><span class="kw">:</span><span class="at"> </span><span class="st">'#1B2D0B'</span></span>
-<span id="cb5-14"><a href=""></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> lilac</span></span>
-<span id="cb5-15"><a href=""></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> </span><span class="st">'#1B2D0B'</span></span>
-<span id="cb5-16"><a href=""></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">'#6E2DAB'</span></span>
-<span id="cb5-17"><a href=""></a><span class="at">  </span><span class="fu">secondary</span><span class="kw">:</span><span class="at"> </span><span class="st">'#49752E'</span></span>
-<span id="cb5-18"><a href=""></a><span class="at">  </span><span class="fu">success</span><span class="kw">:</span><span class="at"> </span><span class="st">'#49752E'</span></span>
-<span id="cb5-19"><a href=""></a><span class="at">  </span><span class="fu">info</span><span class="kw">:</span><span class="at"> </span><span class="st">'#9B79CD'</span></span>
-<span id="cb5-20"><a href=""></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="st">'#FFB300'</span></span>
-<span id="cb5-21"><a href=""></a><span class="at">  </span><span class="fu">danger</span><span class="kw">:</span><span class="at"> </span><span class="st">'#D7263D'</span></span>
-<span id="cb5-22"><a href=""></a><span class="at">  </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="st">'#FFFFFF'</span></span>
-<span id="cb5-23"><a href=""></a><span class="at">  </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="st">'#1B2D0B'</span></span>
-<span id="cb5-24"><a href=""></a><span class="fu">typography</span><span class="kw">:</span></span>
-<span id="cb5-25"><a href=""></a><span class="at">  </span><span class="fu">fonts</span><span class="kw">:</span></span>
-<span id="cb5-26"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Quicksand</span></span>
-<span id="cb5-27"><a href=""></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
-<span id="cb5-28"><a href=""></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span></span>
-<span id="cb5-29"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">400</span></span>
-<span id="cb5-30"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">700</span></span>
-<span id="cb5-31"><a href=""></a><span class="at">      </span><span class="fu">style</span><span class="kw">:</span></span>
-<span id="cb5-32"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> normal</span></span>
-<span id="cb5-33"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> italic</span></span>
-<span id="cb5-34"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Fira Code</span></span>
-<span id="cb5-35"><a href=""></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> bunny</span></span>
-<span id="cb5-36"><a href=""></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span></span>
-<span id="cb5-37"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">400</span></span>
-<span id="cb5-38"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">500</span></span>
-<span id="cb5-39"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">600</span></span>
-<span id="cb5-40"><a href=""></a><span class="at">      </span><span class="fu">style</span><span class="kw">:</span></span>
-<span id="cb5-41"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> normal</span></span>
-<span id="cb5-42"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> italic</span></span>
-<span id="cb5-43"><a href=""></a><span class="at">  </span><span class="fu">base</span><span class="kw">:</span></span>
-<span id="cb5-44"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Quicksand</span></span>
-<span id="cb5-45"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">400</span></span>
-<span id="cb5-46"><a href=""></a><span class="at">    </span><span class="fu">size</span><span class="kw">:</span><span class="at"> 16px</span></span>
-<span id="cb5-47"><a href=""></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.5</span></span>
-<span id="cb5-48"><a href=""></a><span class="at">  </span><span class="fu">headings</span><span class="kw">:</span></span>
-<span id="cb5-49"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Quicksand</span></span>
-<span id="cb5-50"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">700</span></span>
-<span id="cb5-51"><a href=""></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> normal</span></span>
-<span id="cb5-52"><a href=""></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2</span></span>
-<span id="cb5-53"><a href=""></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">'#6E2DAB'</span></span>
-<span id="cb5-54"><a href=""></a><span class="at">  </span><span class="fu">monospace</span><span class="kw">:</span></span>
-<span id="cb5-55"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Fira Code</span></span>
-<span id="cb5-56"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">400</span></span>
-<span id="cb5-57"><a href=""></a><span class="at">    </span><span class="fu">size</span><span class="kw">:</span><span class="at"> 0.9em</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="1-2|3-4|5|6-13|14-23|24|25-42|43-47|48-53|54-57"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href=""></a><span class="fu">meta</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href=""></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Iris Dataset</span></span>
+<span id="cb4-3"><a href=""></a><span class="fu">logo</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-4"><a href=""></a><span class="at">  </span><span class="fu">medium</span><span class="kw">:</span><span class="at"> logo.png</span></span>
+<span id="cb4-5"><a href=""></a><span class="fu">color</span><span class="kw">:</span></span>
+<span id="cb4-6"><a href=""></a><span class="at">  </span><span class="fu">palette</span><span class="kw">:</span></span>
+<span id="cb4-7"><a href=""></a><span class="at">    </span><span class="fu">forest-green</span><span class="kw">:</span><span class="at"> </span><span class="st">'#1B2D0B'</span></span>
+<span id="cb4-8"><a href=""></a><span class="at">    </span><span class="fu">green</span><span class="kw">:</span><span class="at"> </span><span class="st">'#49752E'</span></span>
+<span id="cb4-9"><a href=""></a><span class="at">    </span><span class="fu">lavender</span><span class="kw">:</span><span class="at"> </span><span class="st">'#9B79CD'</span></span>
+<span id="cb4-10"><a href=""></a><span class="at">    </span><span class="fu">purple</span><span class="kw">:</span><span class="at"> </span><span class="st">'#6E2DAB'</span></span>
+<span id="cb4-11"><a href=""></a><span class="at">    </span><span class="fu">lilac</span><span class="kw">:</span><span class="at"> </span><span class="st">'#EFEFF8'</span></span>
+<span id="cb4-12"><a href=""></a><span class="at">    </span><span class="fu">white</span><span class="kw">:</span><span class="at"> </span><span class="st">'#FFFFFF'</span></span>
+<span id="cb4-13"><a href=""></a><span class="at">    </span><span class="fu">black</span><span class="kw">:</span><span class="at"> </span><span class="st">'#1B2D0B'</span></span>
+<span id="cb4-14"><a href=""></a><span class="at">  </span><span class="fu">background</span><span class="kw">:</span><span class="at"> lilac</span></span>
+<span id="cb4-15"><a href=""></a><span class="at">  </span><span class="fu">foreground</span><span class="kw">:</span><span class="at"> </span><span class="st">'#1B2D0B'</span></span>
+<span id="cb4-16"><a href=""></a><span class="at">  </span><span class="fu">primary</span><span class="kw">:</span><span class="at"> </span><span class="st">'#6E2DAB'</span></span>
+<span id="cb4-17"><a href=""></a><span class="at">  </span><span class="fu">secondary</span><span class="kw">:</span><span class="at"> </span><span class="st">'#49752E'</span></span>
+<span id="cb4-18"><a href=""></a><span class="at">  </span><span class="fu">success</span><span class="kw">:</span><span class="at"> </span><span class="st">'#49752E'</span></span>
+<span id="cb4-19"><a href=""></a><span class="at">  </span><span class="fu">info</span><span class="kw">:</span><span class="at"> </span><span class="st">'#9B79CD'</span></span>
+<span id="cb4-20"><a href=""></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="st">'#FFB300'</span></span>
+<span id="cb4-21"><a href=""></a><span class="at">  </span><span class="fu">danger</span><span class="kw">:</span><span class="at"> </span><span class="st">'#D7263D'</span></span>
+<span id="cb4-22"><a href=""></a><span class="at">  </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="st">'#FFFFFF'</span></span>
+<span id="cb4-23"><a href=""></a><span class="at">  </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="st">'#1B2D0B'</span></span>
+<span id="cb4-24"><a href=""></a><span class="fu">typography</span><span class="kw">:</span></span>
+<span id="cb4-25"><a href=""></a><span class="at">  </span><span class="fu">fonts</span><span class="kw">:</span></span>
+<span id="cb4-26"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Quicksand</span></span>
+<span id="cb4-27"><a href=""></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> google</span></span>
+<span id="cb4-28"><a href=""></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span></span>
+<span id="cb4-29"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">400</span></span>
+<span id="cb4-30"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">700</span></span>
+<span id="cb4-31"><a href=""></a><span class="at">      </span><span class="fu">style</span><span class="kw">:</span></span>
+<span id="cb4-32"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> normal</span></span>
+<span id="cb4-33"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> italic</span></span>
+<span id="cb4-34"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Fira Code</span></span>
+<span id="cb4-35"><a href=""></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> bunny</span></span>
+<span id="cb4-36"><a href=""></a><span class="at">      </span><span class="fu">weight</span><span class="kw">:</span></span>
+<span id="cb4-37"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">400</span></span>
+<span id="cb4-38"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">500</span></span>
+<span id="cb4-39"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> </span><span class="dv">600</span></span>
+<span id="cb4-40"><a href=""></a><span class="at">      </span><span class="fu">style</span><span class="kw">:</span></span>
+<span id="cb4-41"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> normal</span></span>
+<span id="cb4-42"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> italic</span></span>
+<span id="cb4-43"><a href=""></a><span class="at">  </span><span class="fu">base</span><span class="kw">:</span></span>
+<span id="cb4-44"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Quicksand</span></span>
+<span id="cb4-45"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">400</span></span>
+<span id="cb4-46"><a href=""></a><span class="at">    </span><span class="fu">size</span><span class="kw">:</span><span class="at"> 16px</span></span>
+<span id="cb4-47"><a href=""></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.5</span></span>
+<span id="cb4-48"><a href=""></a><span class="at">  </span><span class="fu">headings</span><span class="kw">:</span></span>
+<span id="cb4-49"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Quicksand</span></span>
+<span id="cb4-50"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">700</span></span>
+<span id="cb4-51"><a href=""></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> normal</span></span>
+<span id="cb4-52"><a href=""></a><span class="at">    </span><span class="fu">line-height</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.2</span></span>
+<span id="cb4-53"><a href=""></a><span class="at">    </span><span class="fu">color</span><span class="kw">:</span><span class="at"> </span><span class="st">'#6E2DAB'</span></span>
+<span id="cb4-54"><a href=""></a><span class="at">  </span><span class="fu">monospace</span><span class="kw">:</span></span>
+<span id="cb4-55"><a href=""></a><span class="at">    </span><span class="fu">family</span><span class="kw">:</span><span class="at"> Fira Code</span></span>
+<span id="cb4-56"><a href=""></a><span class="at">    </span><span class="fu">weight</span><span class="kw">:</span><span class="at"> </span><span class="dv">400</span></span>
+<span id="cb4-57"><a href=""></a><span class="at">    </span><span class="fu">size</span><span class="kw">:</span><span class="at"> 0.9em</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="the-traditional-solution" class="slide level2" data-background-color="#1F407A">
@@ -462,8 +441,8 @@ Umair Durrani (Data Scientist at Presage Group)
 </section>
 <section id="createbranding-app" class="slide level2">
 <h2>createBranding app</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Install from GitHub</span></span>
-<span id="cb6-2"><a href=""></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"durraniu/brandthis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># Install from GitHub</span></span>
+<span id="cb5-2"><a href=""></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"durraniu/brandthis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -488,7 +467,7 @@ Umair Durrani (Data Scientist at Presage Group)
 </section>
 <section id="createbranding-app-1" class="slide level2">
 <h2>createBranding app</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>brandthis<span class="sc">::</span><span class="fu">run_brand_app</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>brandthis<span class="sc">::</span><span class="fu">run_brand_app</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <video width="640" height="480" controls="">
 <source src="brandthis_vdo4.mp4" type="video/mp4">
 </video>
@@ -530,23 +509,23 @@ Umair Durrani (Data Scientist at Presage Group)
 <section id="brandthiscreate_brand" class="slide level2">
 <h2><code>brandthis::create_brand</code></h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-code-line-numbers="1-6|2|3|4|5|8-17|9|10-14|15|16|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>personal_brand <span class="ot">&lt;-</span> brandthis<span class="sc">::</span><span class="fu">create_brand</span>(</span>
-<span id="cb8-2"><a href=""></a>  <span class="at">prompt =</span> <span class="st">"My name is John Doe"</span>,</span>
-<span id="cb8-3"><a href=""></a>  <span class="at">img =</span> <span class="st">"Iris_virginica.jpg"</span>,</span>
-<span id="cb8-4"><a href=""></a>  <span class="at">type =</span> <span class="st">"personal"</span>,</span>
-<span id="cb8-5"><a href=""></a>  <span class="at">chat_fn =</span> ellmer<span class="sc">::</span>chat_google_gemini</span>
-<span id="cb8-6"><a href=""></a>)</span>
-<span id="cb8-7"><a href=""></a></span>
-<span id="cb8-8"><a href=""></a>company_brand <span class="ot">&lt;-</span> brandthis<span class="sc">::</span><span class="fu">create_brand</span>(</span>
-<span id="cb8-9"><a href=""></a>  <span class="at">prompt =</span> <span class="st">"Company name is Walmart"</span>,</span>
-<span id="cb8-10"><a href=""></a>  <span class="at">img =</span> <span class="fu">c</span>(</span>
-<span id="cb8-11"><a href=""></a>    <span class="st">"walmart-font.png"</span>,</span>
-<span id="cb8-12"><a href=""></a>    <span class="st">"walmart-palette.jpeg"</span>,</span>
-<span id="cb8-13"><a href=""></a>    <span class="st">"walmart-logo.png"</span></span>
-<span id="cb8-14"><a href=""></a>  ),</span>
-<span id="cb8-15"><a href=""></a>  <span class="at">type =</span> <span class="st">"company"</span>,</span>
-<span id="cb8-16"><a href=""></a>  <span class="at">chat_fn =</span> ellmer<span class="sc">::</span>chat_google_gemini</span>
-<span id="cb8-17"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-code-line-numbers="1-6|2|3|4|5|8-17|9|10-14|15|16|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>personal_brand <span class="ot">&lt;-</span> brandthis<span class="sc">::</span><span class="fu">create_brand</span>(</span>
+<span id="cb7-2"><a href=""></a>  <span class="at">prompt =</span> <span class="st">"My name is John Doe"</span>,</span>
+<span id="cb7-3"><a href=""></a>  <span class="at">img =</span> <span class="st">"Iris_virginica.jpg"</span>,</span>
+<span id="cb7-4"><a href=""></a>  <span class="at">type =</span> <span class="st">"personal"</span>,</span>
+<span id="cb7-5"><a href=""></a>  <span class="at">chat_fn =</span> ellmer<span class="sc">::</span>chat_google_gemini</span>
+<span id="cb7-6"><a href=""></a>)</span>
+<span id="cb7-7"><a href=""></a></span>
+<span id="cb7-8"><a href=""></a>company_brand <span class="ot">&lt;-</span> brandthis<span class="sc">::</span><span class="fu">create_brand</span>(</span>
+<span id="cb7-9"><a href=""></a>  <span class="at">prompt =</span> <span class="st">"Company name is Walmart"</span>,</span>
+<span id="cb7-10"><a href=""></a>  <span class="at">img =</span> <span class="fu">c</span>(</span>
+<span id="cb7-11"><a href=""></a>    <span class="st">"walmart-font.png"</span>,</span>
+<span id="cb7-12"><a href=""></a>    <span class="st">"walmart-palette.jpeg"</span>,</span>
+<span id="cb7-13"><a href=""></a>    <span class="st">"walmart-logo.png"</span></span>
+<span id="cb7-14"><a href=""></a>  ),</span>
+<span id="cb7-15"><a href=""></a>  <span class="at">type =</span> <span class="st">"company"</span>,</span>
+<span id="cb7-16"><a href=""></a>  <span class="at">chat_fn =</span> ellmer<span class="sc">::</span>chat_google_gemini</span>
+<span id="cb7-17"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="how-create_brand-works" class="slide level2">
@@ -557,45 +536,45 @@ Umair Durrani (Data Scientist at Presage Group)
 <section id="how-create_brand-works-1" class="slide level2">
 <h2>How <code>create_brand</code> works?</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-code-line-numbers="1-6|8-10|12-13|15-35|16|17-18|19-27|28|29|30|32-35|37-39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># Make an ellmer chat object</span></span>
-<span id="cb9-2"><a href=""></a>client_brand <span class="ot">&lt;-</span> <span class="fu">make_chat</span>(</span>
-<span id="cb9-3"><a href=""></a>  chat_fn,</span>
-<span id="cb9-4"><a href=""></a>  <span class="at">system_prompt =</span> system_prompt_brand,</span>
-<span id="cb9-5"><a href=""></a>  ...</span>
-<span id="cb9-6"><a href=""></a>)</span>
-<span id="cb9-7"><a href=""></a></span>
-<span id="cb9-8"><a href=""></a><span class="co"># Register tools for fonts and contrast</span></span>
-<span id="cb9-9"><a href=""></a>client_brand<span class="sc">$</span><span class="fu">register_tool</span>(get_fonts_combination_tool)</span>
-<span id="cb9-10"><a href=""></a>client_brand<span class="sc">$</span><span class="fu">register_tool</span>(check_contrast_tool)</span>
-<span id="cb9-11"><a href=""></a></span>
-<span id="cb9-12"><a href=""></a><span class="co"># Image paths</span></span>
-<span id="cb9-13"><a href=""></a>img <span class="ot">&lt;-</span> <span class="fu">get_image_paths</span>(<span class="at">img =</span> img, <span class="at">browse =</span> browse, <span class="at">type =</span> type)</span>
-<span id="cb9-14"><a href=""></a></span>
-<span id="cb9-15"><a href=""></a><span class="co"># Chat</span></span>
-<span id="cb9-16"><a href=""></a><span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"personal"</span>){</span>
-<span id="cb9-17"><a href=""></a>  <span class="co"># Either img is NULL</span></span>
-<span id="cb9-18"><a href=""></a>  prompt <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Create a personal brand.yml. "</span>, prompt)</span>
-<span id="cb9-19"><a href=""></a>  <span class="co"># Or img has a single URL or a single path</span></span>
-<span id="cb9-20"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(img)){</span>
-<span id="cb9-21"><a href=""></a>    vec_color <span class="ot">&lt;-</span> <span class="fu">create_palette_from_image</span>(<span class="at">img =</span> img, <span class="at">show =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb9-22"><a href=""></a>    prompt <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
-<span id="cb9-23"><a href=""></a>      prompt,</span>
-<span id="cb9-24"><a href=""></a>      <span class="st">". The initial color palette is: "</span>,</span>
-<span id="cb9-25"><a href=""></a>      <span class="fu">paste</span>(vec_color, <span class="at">collapse =</span> <span class="st">", "</span>)</span>
-<span id="cb9-26"><a href=""></a>    )</span>
-<span id="cb9-27"><a href=""></a>  }</span>
-<span id="cb9-28"><a href=""></a>  res <span class="ot">&lt;-</span> client_brand<span class="sc">$</span><span class="fu">chat</span>(prompt)</span>
-<span id="cb9-29"><a href=""></a>} <span class="cf">else</span> <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"company"</span>){</span>
-<span id="cb9-30"><a href=""></a>  prompt <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Create a company brand.yml. "</span>, prompt)</span>
-<span id="cb9-31"><a href=""></a>  <span class="co"># Either img has one or more paths</span></span>
-<span id="cb9-32"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(img)){</span>
-<span id="cb9-33"><a href=""></a>    img_ellmer <span class="ot">&lt;-</span> <span class="fu">lapply</span>(img, ellmer<span class="sc">::</span>content_image_file)</span>
-<span id="cb9-34"><a href=""></a>    res <span class="ot">&lt;-</span> <span class="fu">do.call</span>(client_brand<span class="sc">$</span>chat, <span class="fu">c</span>(prompt, img_ellmer))</span>
-<span id="cb9-35"><a href=""></a>  }</span>
-<span id="cb9-36"><a href=""></a>}</span>
-<span id="cb9-37"><a href=""></a></span>
-<span id="cb9-38"><a href=""></a><span class="co"># Make a brand.yml object</span></span>
-<span id="cb9-39"><a href=""></a>brand.yml<span class="sc">::</span><span class="fu">as_brand_yml</span>(<span class="fu">as.character</span>(res))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-code-line-numbers="1-6|8-10|12-13|15-35|16|17-18|19-27|28|29|30|32-35|37-39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># Make an ellmer chat object</span></span>
+<span id="cb8-2"><a href=""></a>client_brand <span class="ot">&lt;-</span> <span class="fu">make_chat</span>(</span>
+<span id="cb8-3"><a href=""></a>  chat_fn,</span>
+<span id="cb8-4"><a href=""></a>  <span class="at">system_prompt =</span> system_prompt_brand,</span>
+<span id="cb8-5"><a href=""></a>  ...</span>
+<span id="cb8-6"><a href=""></a>)</span>
+<span id="cb8-7"><a href=""></a></span>
+<span id="cb8-8"><a href=""></a><span class="co"># Register tools for fonts and contrast</span></span>
+<span id="cb8-9"><a href=""></a>client_brand<span class="sc">$</span><span class="fu">register_tool</span>(get_fonts_combination_tool)</span>
+<span id="cb8-10"><a href=""></a>client_brand<span class="sc">$</span><span class="fu">register_tool</span>(check_contrast_tool)</span>
+<span id="cb8-11"><a href=""></a></span>
+<span id="cb8-12"><a href=""></a><span class="co"># Image paths</span></span>
+<span id="cb8-13"><a href=""></a>img <span class="ot">&lt;-</span> <span class="fu">get_image_paths</span>(<span class="at">img =</span> img, <span class="at">browse =</span> browse, <span class="at">type =</span> type)</span>
+<span id="cb8-14"><a href=""></a></span>
+<span id="cb8-15"><a href=""></a><span class="co"># Chat</span></span>
+<span id="cb8-16"><a href=""></a><span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"personal"</span>){</span>
+<span id="cb8-17"><a href=""></a>  <span class="co"># Either img is NULL</span></span>
+<span id="cb8-18"><a href=""></a>  prompt <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Create a personal brand.yml. "</span>, prompt)</span>
+<span id="cb8-19"><a href=""></a>  <span class="co"># Or img has a single URL or a single path</span></span>
+<span id="cb8-20"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(img)){</span>
+<span id="cb8-21"><a href=""></a>    vec_color <span class="ot">&lt;-</span> <span class="fu">create_palette_from_image</span>(<span class="at">img =</span> img, <span class="at">show =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-22"><a href=""></a>    prompt <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
+<span id="cb8-23"><a href=""></a>      prompt,</span>
+<span id="cb8-24"><a href=""></a>      <span class="st">". The initial color palette is: "</span>,</span>
+<span id="cb8-25"><a href=""></a>      <span class="fu">paste</span>(vec_color, <span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb8-26"><a href=""></a>    )</span>
+<span id="cb8-27"><a href=""></a>  }</span>
+<span id="cb8-28"><a href=""></a>  res <span class="ot">&lt;-</span> client_brand<span class="sc">$</span><span class="fu">chat</span>(prompt)</span>
+<span id="cb8-29"><a href=""></a>} <span class="cf">else</span> <span class="cf">if</span> (type <span class="sc">==</span> <span class="st">"company"</span>){</span>
+<span id="cb8-30"><a href=""></a>  prompt <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Create a company brand.yml. "</span>, prompt)</span>
+<span id="cb8-31"><a href=""></a>  <span class="co"># Either img has one or more paths</span></span>
+<span id="cb8-32"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(img)){</span>
+<span id="cb8-33"><a href=""></a>    img_ellmer <span class="ot">&lt;-</span> <span class="fu">lapply</span>(img, ellmer<span class="sc">::</span>content_image_file)</span>
+<span id="cb8-34"><a href=""></a>    res <span class="ot">&lt;-</span> <span class="fu">do.call</span>(client_brand<span class="sc">$</span>chat, <span class="fu">c</span>(prompt, img_ellmer))</span>
+<span id="cb8-35"><a href=""></a>  }</span>
+<span id="cb8-36"><a href=""></a>}</span>
+<span id="cb8-37"><a href=""></a></span>
+<span id="cb8-38"><a href=""></a><span class="co"># Make a brand.yml object</span></span>
+<span id="cb8-39"><a href=""></a>brand.yml<span class="sc">::</span><span class="fu">as_brand_yml</span>(<span class="fu">as.character</span>(res))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section>
 <section>
@@ -1164,77 +1143,194 @@ text-decoration: underline;
 
 </div>
 </section>
+<section id="retrieval-augmented-generation-rag" class="slide level2">
+<h2>Retrieval-Augmented Generation (RAG)</h2>
+<ul>
+<li><strong>Store information</strong> - Documents, articles, or data are broken into chunks and stored in a searchable database</li>
+<li><strong>Retrieve relevant info</strong> - When you ask a question, the system searches for the most relevant chunks</li>
+<li><strong>Generate an answer</strong> - The LLM reads those chunks and uses them to write an accurate, informed response</li>
+</ul>
+</section>
 <section id="how-suggest_color_scales-works" class="slide level2">
 <h2>How <code>suggest_color_scales</code> works?</h2>
 <p><strong>Create a knowledge store for RAG</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="1|3-6|8-13|15-18|20-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">library</span>(ragnar)</span>
-<span id="cb10-2"><a href=""></a></span>
-<span id="cb10-3"><a href=""></a><span class="co"># Find all the relevant pages</span></span>
-<span id="cb10-4"><a href=""></a>base_url_paletteer <span class="ot">&lt;-</span> <span class="st">"https://emilhvitfeldt.github.io/paletteer/index.html"</span></span>
-<span id="cb10-5"><a href=""></a>pages_paletteer <span class="ot">&lt;-</span> <span class="fu">ragnar_find_links</span>(base_url_paletteer)</span>
-<span id="cb10-6"><a href=""></a>pp <span class="ot">&lt;-</span> pages_paletteer[<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>)]</span>
-<span id="cb10-7"><a href=""></a></span>
-<span id="cb10-8"><a href=""></a><span class="do">## Embeddings model</span></span>
-<span id="cb10-9"><a href=""></a>store_location <span class="ot">&lt;-</span> <span class="st">"paletteer.ragnar.duckdb"</span></span>
-<span id="cb10-10"><a href=""></a>store <span class="ot">&lt;-</span> <span class="fu">ragnar_store_create</span>(</span>
-<span id="cb10-11"><a href=""></a>  store_location,</span>
-<span id="cb10-12"><a href=""></a>  <span class="at">embed =</span> \(x) ragnar<span class="sc">::</span><span class="fu">embed_ollama</span>(x, <span class="at">model =</span> <span class="st">"embeddinggemma"</span>)</span>
-<span id="cb10-13"><a href=""></a>)</span>
-<span id="cb10-14"><a href=""></a></span>
-<span id="cb10-15"><a href=""></a><span class="do">## Insert into knowledge store</span></span>
-<span id="cb10-16"><a href=""></a><span class="fu">ragnar_store_insert</span>(store, <span class="fu">markdown_chunk</span>(paletteer<span class="sc">::</span>palettes_c_names))</span>
-<span id="cb10-17"><a href=""></a><span class="fu">ragnar_store_insert</span>(store, <span class="fu">markdown_chunk</span>(paletteer<span class="sc">::</span>palettes_d_names))</span>
-<span id="cb10-18"><a href=""></a><span class="fu">ragnar_store_insert</span>(store, <span class="fu">markdown_chunk</span>(paletteer<span class="sc">::</span>palettes_dynamic_names))</span>
-<span id="cb10-19"><a href=""></a></span>
-<span id="cb10-20"><a href=""></a><span class="cf">for</span> (page <span class="cf">in</span> pp) {</span>
-<span id="cb10-21"><a href=""></a>  <span class="fu">message</span>(<span class="st">"ingesting: "</span>, page)</span>
-<span id="cb10-22"><a href=""></a>  chunks <span class="ot">&lt;-</span> page <span class="sc">|&gt;</span> <span class="fu">read_as_markdown</span>() <span class="sc">|&gt;</span> <span class="fu">markdown_chunk</span>()</span>
-<span id="cb10-23"><a href=""></a>  <span class="fu">ragnar_store_insert</span>(store, chunks)</span>
-<span id="cb10-24"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-code-line-numbers="1|3-6|8-13|15-18|20-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">library</span>(ragnar)</span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a><span class="co"># Find all the relevant pages</span></span>
+<span id="cb9-4"><a href=""></a>base_url_paletteer <span class="ot">&lt;-</span> <span class="st">"https://emilhvitfeldt.github.io/paletteer/index.html"</span></span>
+<span id="cb9-5"><a href=""></a>pages_paletteer <span class="ot">&lt;-</span> <span class="fu">ragnar_find_links</span>(base_url_paletteer)</span>
+<span id="cb9-6"><a href=""></a>pp <span class="ot">&lt;-</span> pages_paletteer[<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>)]</span>
+<span id="cb9-7"><a href=""></a></span>
+<span id="cb9-8"><a href=""></a><span class="do">## Embeddings model</span></span>
+<span id="cb9-9"><a href=""></a>store_location <span class="ot">&lt;-</span> <span class="st">"paletteer.ragnar.duckdb"</span></span>
+<span id="cb9-10"><a href=""></a>store <span class="ot">&lt;-</span> <span class="fu">ragnar_store_create</span>(</span>
+<span id="cb9-11"><a href=""></a>  store_location,</span>
+<span id="cb9-12"><a href=""></a>  <span class="at">embed =</span> \(x) ragnar<span class="sc">::</span><span class="fu">embed_ollama</span>(x, <span class="at">model =</span> <span class="st">"embeddinggemma"</span>)</span>
+<span id="cb9-13"><a href=""></a>)</span>
+<span id="cb9-14"><a href=""></a></span>
+<span id="cb9-15"><a href=""></a><span class="do">## Insert into knowledge store</span></span>
+<span id="cb9-16"><a href=""></a><span class="fu">ragnar_store_insert</span>(store, <span class="fu">markdown_chunk</span>(paletteer<span class="sc">::</span>palettes_c_names))</span>
+<span id="cb9-17"><a href=""></a><span class="fu">ragnar_store_insert</span>(store, <span class="fu">markdown_chunk</span>(paletteer<span class="sc">::</span>palettes_d_names))</span>
+<span id="cb9-18"><a href=""></a><span class="fu">ragnar_store_insert</span>(store, <span class="fu">markdown_chunk</span>(paletteer<span class="sc">::</span>palettes_dynamic_names))</span>
+<span id="cb9-19"><a href=""></a></span>
+<span id="cb9-20"><a href=""></a><span class="cf">for</span> (page <span class="cf">in</span> pp) {</span>
+<span id="cb9-21"><a href=""></a>  <span class="fu">message</span>(<span class="st">"ingesting: "</span>, page)</span>
+<span id="cb9-22"><a href=""></a>  chunks <span class="ot">&lt;-</span> page <span class="sc">|&gt;</span> <span class="fu">read_as_markdown</span>() <span class="sc">|&gt;</span> <span class="fu">markdown_chunk</span>()</span>
+<span id="cb9-23"><a href=""></a>  <span class="fu">ragnar_store_insert</span>(store, chunks)</span>
+<span id="cb9-24"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="how-suggest_color_scales-works-1" class="slide level2">
 <h2>How <code>suggest_color_scales</code> works?</h2>
 <p><strong>Retrieve from the store</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" data-code-line-numbers="1-5|7-12|13-15|17-21|23|25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>suggest_color_scales <span class="ot">&lt;-</span> <span class="cf">function</span>(brand_yml,</span>
-<span id="cb11-2"><a href=""></a>                                 <span class="at">pkg =</span> <span class="fu">c</span>(<span class="st">"paletteer"</span>, <span class="st">"ggsci"</span>),</span>
-<span id="cb11-3"><a href=""></a>                                 <span class="at">top_k =</span> <span class="dv">8</span>L,</span>
-<span id="cb11-4"><a href=""></a>                                 <span class="at">chat_fn =</span> ellmer<span class="sc">::</span>chat_google_gemini,</span>
-<span id="cb11-5"><a href=""></a>                                 ...){</span>
-<span id="cb11-6"><a href=""></a>  pkg <span class="ot">=</span> <span class="fu">match.arg</span>(pkg)</span>
-<span id="cb11-7"><a href=""></a>  <span class="cf">if</span> (pkg <span class="sc">==</span> <span class="st">"ggsci"</span>){</span>
-<span id="cb11-8"><a href=""></a>    system_prompt_scs <span class="ot">&lt;-</span> system_prompt_scs_ggsci</span>
-<span id="cb11-9"><a href=""></a>  }</span>
-<span id="cb11-10"><a href=""></a>  <span class="cf">if</span> (pkg <span class="sc">==</span> <span class="st">"paletteer"</span>){</span>
-<span id="cb11-11"><a href=""></a>    system_prompt_scs <span class="ot">&lt;-</span> system_prompt_scs_paletteer</span>
-<span id="cb11-12"><a href=""></a>  }</span>
-<span id="cb11-13"><a href=""></a>  semantic_colors_list <span class="ot">&lt;-</span> <span class="fu">semantic_colors_as_hex_codes</span>(brand_yml<span class="sc">$</span>color)</span>
-<span id="cb11-14"><a href=""></a>  <span class="co"># Make one string</span></span>
-<span id="cb11-15"><a href=""></a>  semantic_colors <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">names</span>(semantic_colors_list), semantic_colors_list, <span class="at">sep =</span> <span class="st">"="</span>, <span class="at">collapse =</span> <span class="st">", "</span>)</span>
-<span id="cb11-16"><a href=""></a></span>
-<span id="cb11-17"><a href=""></a>  client_scs <span class="ot">&lt;-</span> <span class="fu">make_chat</span>(</span>
-<span id="cb11-18"><a href=""></a>    chat_fn,</span>
-<span id="cb11-19"><a href=""></a>    <span class="at">system_prompt =</span> system_prompt_scs,</span>
-<span id="cb11-20"><a href=""></a>    ...</span>
-<span id="cb11-21"><a href=""></a>  )</span>
-<span id="cb11-22"><a href=""></a></span>
-<span id="cb11-23"><a href=""></a>  ragnar<span class="sc">::</span><span class="fu">ragnar_register_tool_retrieve</span>(client_scs, <span class="fu">brandthis_ragnar_store</span>(pkg), <span class="at">top_k =</span> top_k)</span>
-<span id="cb11-24"><a href=""></a></span>
-<span id="cb11-25"><a href=""></a>  client_scs<span class="sc">$</span><span class="fu">chat</span>(semantic_colors)</span>
-<span id="cb11-26"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="1-5|7-12|13-15|17-21|23|25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>suggest_color_scales <span class="ot">&lt;-</span> <span class="cf">function</span>(brand_yml,</span>
+<span id="cb10-2"><a href=""></a>                                 <span class="at">pkg =</span> <span class="fu">c</span>(<span class="st">"paletteer"</span>, <span class="st">"ggsci"</span>),</span>
+<span id="cb10-3"><a href=""></a>                                 <span class="at">top_k =</span> <span class="dv">8</span>L,</span>
+<span id="cb10-4"><a href=""></a>                                 <span class="at">chat_fn =</span> ellmer<span class="sc">::</span>chat_google_gemini,</span>
+<span id="cb10-5"><a href=""></a>                                 ...){</span>
+<span id="cb10-6"><a href=""></a>  pkg <span class="ot">=</span> <span class="fu">match.arg</span>(pkg)</span>
+<span id="cb10-7"><a href=""></a>  <span class="cf">if</span> (pkg <span class="sc">==</span> <span class="st">"ggsci"</span>){</span>
+<span id="cb10-8"><a href=""></a>    system_prompt_scs <span class="ot">&lt;-</span> system_prompt_scs_ggsci</span>
+<span id="cb10-9"><a href=""></a>  }</span>
+<span id="cb10-10"><a href=""></a>  <span class="cf">if</span> (pkg <span class="sc">==</span> <span class="st">"paletteer"</span>){</span>
+<span id="cb10-11"><a href=""></a>    system_prompt_scs <span class="ot">&lt;-</span> system_prompt_scs_paletteer</span>
+<span id="cb10-12"><a href=""></a>  }</span>
+<span id="cb10-13"><a href=""></a>  semantic_colors_list <span class="ot">&lt;-</span> <span class="fu">semantic_colors_as_hex_codes</span>(brand_yml<span class="sc">$</span>color)</span>
+<span id="cb10-14"><a href=""></a>  <span class="co"># Make one string</span></span>
+<span id="cb10-15"><a href=""></a>  semantic_colors <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">names</span>(semantic_colors_list), semantic_colors_list, <span class="at">sep =</span> <span class="st">"="</span>, <span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb10-16"><a href=""></a></span>
+<span id="cb10-17"><a href=""></a>  client_scs <span class="ot">&lt;-</span> <span class="fu">make_chat</span>(</span>
+<span id="cb10-18"><a href=""></a>    chat_fn,</span>
+<span id="cb10-19"><a href=""></a>    <span class="at">system_prompt =</span> system_prompt_scs,</span>
+<span id="cb10-20"><a href=""></a>    ...</span>
+<span id="cb10-21"><a href=""></a>  )</span>
+<span id="cb10-22"><a href=""></a></span>
+<span id="cb10-23"><a href=""></a>  ragnar<span class="sc">::</span><span class="fu">ragnar_register_tool_retrieve</span>(client_scs, <span class="fu">brandthis_ragnar_store</span>(pkg), <span class="at">top_k =</span> top_k)</span>
+<span id="cb10-24"><a href=""></a></span>
+<span id="cb10-25"><a href=""></a>  client_scs<span class="sc">$</span><span class="fu">chat</span>(semantic_colors)</span>
+<span id="cb10-26"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="suggested-scales" class="slide level2">
 <h2>Suggested scales</h2>
 
-<img data-src="slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
-<section id="suggested-scales-1" class="slide level2">
-<h2>Suggested scales</h2>
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="create-color-palettes" class="title-slide slide level1 center">
+<h1>Create color palettes</h1>
+
 </section>
-<section id="suggested-scales-2" class="slide level2">
-<h2>Suggested scales</h2>
+<section id="structured-output" class="slide level2">
+<h2>Structured Output</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>brandthis<span class="sc">::</span><span class="fu">create_color_palette</span>(brand.yml<span class="sc">::</span><span class="fu">read_brand_yml</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Instead of:</p>
+<blockquote>
+<p>Here are your requested color palettes: Discrete: “#1F407A” “#78D32D” “#FDD60A” “#9A4665” “#8A2BE2” “#008080” Sequential: “#F0F8FF” “#B0C4DE” “#8DA0C8” “#6C7BAF” “#4B5696” “#2F367F” …</p>
+</blockquote>
+<div class="fragment">
+<p>Structured output:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>cp <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb12-2"><a href=""></a>  <span class="at">discrete1 =</span> <span class="fu">c</span>(<span class="st">"#1F407A"</span>, <span class="st">"#78D32D"</span>, <span class="st">"#FDD60A"</span>, <span class="st">"#9A4665"</span>, <span class="st">"#8A2BE2"</span>, <span class="st">"#008080"</span>), </span>
+<span id="cb12-3"><a href=""></a>  <span class="at">sequential1 =</span> <span class="fu">c</span>(<span class="st">"#F0F8FF"</span>, <span class="st">"#B0C4DE"</span>, <span class="st">"#8DA0C8"</span>, <span class="st">"#6C7BAF"</span>, <span class="st">"#4B5696"</span>, </span>
+<span id="cb12-4"><a href=""></a>                <span class="st">"#2F367F"</span>, <span class="st">"#1F407A"</span>, <span class="st">"#15305C"</span>, <span class="st">"#0B203D"</span>),  </span>
+<span id="cb12-5"><a href=""></a>  <span class="at">diverging1 =</span> <span class="fu">c</span>(<span class="st">"#1F407A"</span>, <span class="st">"#4B6B9B"</span>, <span class="st">"#7A96BC"</span>, <span class="st">"#A9C1DD"</span>, <span class="st">"#F0F8FF"</span>, </span>
+<span id="cb12-6"><a href=""></a>                <span class="st">"#DBC5CE"</span>, <span class="st">"#BF97A4"</span>, <span class="st">"#9A4665"</span>)</span>
+<span id="cb12-7"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="using-color-palettes" class="slide level2">
+<h2>Using color palettes</h2>
+
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="how-create_color_palette-works" class="slide level2">
+<h2>How <code>create_color_palette</code> works?</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" data-code-line-numbers="1-3|5-10|12-16|18-48|18|19|20-23|44-47|50-54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>create_color_palette <span class="ot">&lt;-</span> <span class="cf">function</span>(brand_yml,</span>
+<span id="cb13-2"><a href=""></a>                                <span class="at">chat_fn =</span> ellmer<span class="sc">::</span>chat_google_gemini,</span>
+<span id="cb13-3"><a href=""></a>                                 ...){</span>
+<span id="cb13-4"><a href=""></a></span>
+<span id="cb13-5"><a href=""></a>  semantic_colors_list <span class="ot">&lt;-</span> <span class="fu">semantic_colors_as_hex_codes</span>(brand_yml<span class="sc">$</span>color)</span>
+<span id="cb13-6"><a href=""></a>  <span class="co"># Make one string</span></span>
+<span id="cb13-7"><a href=""></a>  semantic_colors <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">names</span>(semantic_colors_list),</span>
+<span id="cb13-8"><a href=""></a>                           semantic_colors_list,</span>
+<span id="cb13-9"><a href=""></a>                           <span class="at">sep =</span> <span class="st">"="</span>,</span>
+<span id="cb13-10"><a href=""></a>                           <span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb13-11"><a href=""></a></span>
+<span id="cb13-12"><a href=""></a>  client_ccp <span class="ot">&lt;-</span> <span class="fu">make_chat</span>(</span>
+<span id="cb13-13"><a href=""></a>    chat_fn,</span>
+<span id="cb13-14"><a href=""></a>    <span class="at">system_prompt =</span> system_prompt_ccp,</span>
+<span id="cb13-15"><a href=""></a>    ...</span>
+<span id="cb13-16"><a href=""></a>  )</span>
+<span id="cb13-17"><a href=""></a></span>
+<span id="cb13-18"><a href=""></a>  palette_type <span class="ot">&lt;-</span> ellmer<span class="sc">::</span><span class="fu">type_object</span>(</span>
+<span id="cb13-19"><a href=""></a>    <span class="st">"A collection of color palettes for ggplot2"</span>,</span>
+<span id="cb13-20"><a href=""></a>    <span class="at">discrete1 =</span> ellmer<span class="sc">::</span><span class="fu">type_array</span>(</span>
+<span id="cb13-21"><a href=""></a>      <span class="st">"First discrete palette: a list of color hex codes without names or comments."</span>,</span>
+<span id="cb13-22"><a href=""></a>      <span class="at">items =</span> ellmer<span class="sc">::</span><span class="fu">type_string</span>()</span>
+<span id="cb13-23"><a href=""></a>    ),</span>
+<span id="cb13-24"><a href=""></a>    <span class="at">discrete2 =</span> ellmer<span class="sc">::</span><span class="fu">type_array</span>(</span>
+<span id="cb13-25"><a href=""></a>      <span class="st">"Second discrete palette: a list of color hex codes without names or comments."</span>,</span>
+<span id="cb13-26"><a href=""></a>      <span class="at">items =</span> ellmer<span class="sc">::</span><span class="fu">type_string</span>()</span>
+<span id="cb13-27"><a href=""></a>    ),</span>
+<span id="cb13-28"><a href=""></a>    <span class="at">sequential1 =</span> ellmer<span class="sc">::</span><span class="fu">type_array</span>(</span>
+<span id="cb13-29"><a href=""></a>      <span class="st">"First sequential palette: a list of color hex codes without names or comments."</span>,</span>
+<span id="cb13-30"><a href=""></a>      <span class="at">items =</span> ellmer<span class="sc">::</span><span class="fu">type_string</span>()</span>
+<span id="cb13-31"><a href=""></a>    ),</span>
+<span id="cb13-32"><a href=""></a>    <span class="at">sequential2 =</span> ellmer<span class="sc">::</span><span class="fu">type_array</span>(</span>
+<span id="cb13-33"><a href=""></a>      <span class="st">"Second sequential palette: a list of color hex codes without names or comments."</span>,</span>
+<span id="cb13-34"><a href=""></a>      <span class="at">items =</span> ellmer<span class="sc">::</span><span class="fu">type_string</span>()</span>
+<span id="cb13-35"><a href=""></a>    ),</span>
+<span id="cb13-36"><a href=""></a>    <span class="at">sequential3 =</span> ellmer<span class="sc">::</span><span class="fu">type_array</span>(</span>
+<span id="cb13-37"><a href=""></a>      <span class="st">"Third sequential palette: a list of color hex codes without names or comments."</span>,</span>
+<span id="cb13-38"><a href=""></a>      <span class="at">items =</span> ellmer<span class="sc">::</span><span class="fu">type_string</span>()</span>
+<span id="cb13-39"><a href=""></a>    ),</span>
+<span id="cb13-40"><a href=""></a>    <span class="at">diverging1 =</span> ellmer<span class="sc">::</span><span class="fu">type_array</span>(</span>
+<span id="cb13-41"><a href=""></a>      <span class="st">"First diverging palette: a list of color hex codes without names or comments."</span>,</span>
+<span id="cb13-42"><a href=""></a>      <span class="at">items =</span> ellmer<span class="sc">::</span><span class="fu">type_string</span>()</span>
+<span id="cb13-43"><a href=""></a>    ),</span>
+<span id="cb13-44"><a href=""></a>    <span class="at">diverging2 =</span> ellmer<span class="sc">::</span><span class="fu">type_array</span>(</span>
+<span id="cb13-45"><a href=""></a>      <span class="st">"Second diverging palette: a list of color hex codes without names or comments."</span>,</span>
+<span id="cb13-46"><a href=""></a>      <span class="at">items =</span> ellmer<span class="sc">::</span><span class="fu">type_string</span>()</span>
+<span id="cb13-47"><a href=""></a>    )</span>
+<span id="cb13-48"><a href=""></a>  )</span>
+<span id="cb13-49"><a href=""></a></span>
+<span id="cb13-50"><a href=""></a>  client_ccp<span class="sc">$</span><span class="fu">chat_structured</span>(</span>
+<span id="cb13-51"><a href=""></a>    semantic_colors,</span>
+<span id="cb13-52"><a href=""></a>    <span class="at">type =</span> palette_type,</span>
+<span id="cb13-53"><a href=""></a>    <span class="at">echo =</span> <span class="cn">FALSE</span></span>
+<span id="cb13-54"><a href=""></a>  )</span>
+<span id="cb13-55"><a href=""></a></span>
+<span id="cb13-56"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="benefits-summary" class="slide level2" data-background-color="#1a1a1a">
+<h2>Benefits Summary</h2>
+<div class="r-fit-text">
+<p><strong>Why Use {brandthis}?</strong></p>
+</div>
+<ul>
+<li class="fragment">⚡ <strong>Speed</strong>: Minutes instead of hours</li>
+<li class="fragment">🎨 <strong>Professional</strong>: LLM-designed color palettes</li>
+<li class="fragment">🔄 <strong>Consistent</strong>: One file for all projects</li>
+<li class="fragment">🤖 <strong>Smart</strong>: AI understands design principles</li>
+</ul>
+</section>
+<section id="and-done" class="slide level2">
+<h2>And done!</h2>
+
+<img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWtpb2FhZTdhZHQ0NmVnMWIzcnAxYTJ0Z25lODRkOGhrbGI2c3l4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JFyH9XrzZh9pAjx1HN/giphy.gif" class="r-stretch"></section>
+<section id="thank-you" class="slide level2" data-background-color="#1a1a1a">
+<h2>Thank You!</h2>
+<p>Questions?</p>
+<h3 id="connect">Connect</h3>
+<ul>
+<li>📧 GitHub: <span class="citation" data-cites="durraniu">@durraniu</span></li>
+<li>🦋 Blueskyy: <span class="citation" data-cites="transport-talk.bsky.social">@transport-talk.bsky.social</span></li>
+<li>📦 Package: github.com/durraniu/brandthis</li>
+<li>🌐 More: Check out the createBranding app (<code>brandthis::run_brand_app()</code>)</li>
+</ul>
 
 </section></section>
     </div>
