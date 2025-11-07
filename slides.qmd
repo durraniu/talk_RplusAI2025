@@ -1,13 +1,26 @@
 ---
 title: "Brand Your Docs, Apps, and ggplots Using LLMs"
-subtitle: "Introducing {brandthis}"
 author: "Umair Durrani (Data Scientist at Presage Group)"
 engine: knitr
 echo: true
 format: 
   revealjs:
     scrollable: true
+    preview-links: true
+    slide-number: true
+    width: 1200
 ---
+
+```{css}
+.no-scroll .slide-background-content {
+  overflow: hidden !important;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+```
+
 
 ## You've Just Finished Your Analysis 🎉
 
@@ -168,8 +181,10 @@ https://posit-dev.github.io/brand-yml/
 
 ## `_brand.yml` makes it easy
 
-```yaml
+```{yaml}
 #| code-line-numbers: 1-2|3-4|5|6-13|14-23|24|25-42|43-47|48-53|54-57
+#| eval: false
+
 meta:
   name: Iris Dataset
 logo: 
@@ -230,9 +245,337 @@ typography:
 ```
 
 
+## The Traditional Solution {background-color="#1F407A"}
+
+::: {.columns}
+::: {.column width="50%"}
+### Manual Branding
+
+- Read branding guidelines PDF
+- Extract colors, fonts, logos
+- Manually create `_brand.yml`
+- Design ggplot2 themes
+- Create custom color scales
+
+:::
+
+::: {.column width="50%"}
+::: {.fragment .fade-up}
+
+⏰ **Hours** of tedious work
+
+🔄 Lots of trial and error
+
+🎨 Requires design expertise
+:::
+:::
+:::
 
 
 
+## Introducing {brandthis} {background-color="#E0B0FF"}
+
+::: {.r-fit-text}
+**AI-powered branding for docs and apps**
+:::
+
+![](logo.png){width=200 fig-align="center"}
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+### 🤖 LLM-Powered
+Uses Google Gemini or other LLMs via {ellmer}
+:::
+
+::: {.column width="50%"}
+### ⚡ Fast
+Generate complete branding in a minute
+:::
+
+:::
+
+
+## createBranding app
+
+```r
+# Install from GitHub
+remotes::install_github("durraniu/brandthis")
+```
+
+. . .
+
+::: {.callout-note}
+## Setup API Key
+You'll need an API key from your favorite LLM provider:
+
+- `GOOGLE_API_KEY`
+- `OPENROUTER_API_KEY`
+- Or any [ellmer-supported provider](https://ellmer.tidyverse.org/)
+
+Add it to your `.Renviron` file.
+:::
+
+
+## createBranding app
+
+```r
+brandthis::run_brand_app()
+```
+
+<video width="640" height="480" controls>
+  <source src="brandthis_vdo4.mp4" type="video/mp4">
+</video>
 
 
 
+## Package Features 
+
+| Function | Description |
+|----------|-------------|
+| `brandthis::create_brand` | Creates `_brand.yml` |
+| `brandthis::suggest_color_scales` | Suggests suitable color palettes and scales |
+| `brandthis::create_color_palette` | Creates color palettes based on `_brand.yml` | 
+
+
+# Generate a `_brand.yml`
+
+![](ellmer.png){width=100}
+
+## `brandthis::create_brand` 
+
+```{r}
+#| eval: false
+#| code-line-numbers: 1-6|2|3|4|5|8-17|9|10-14|15|16|
+personal_brand <- brandthis::create_brand(
+  prompt = "My name is John Doe",
+  img = "Iris_virginica.jpg",
+  type = "personal",
+  chat_fn = ellmer::chat_google_gemini
+)
+
+company_brand <- brandthis::create_brand(
+  prompt = "Company name is Walmart",
+  img = c(
+    "walmart-font.png",
+    "walmart-palette.jpeg",
+    "walmart-logo.png"
+  ),
+  type = "company",
+  chat_fn = ellmer::chat_google_gemini
+)
+```
+
+
+## How `create_brand` works? 
+
+**Tool Calling**
+
+![](tool-calling-right.svg)
+
+## How `create_brand` works? 
+
+```{r}
+#| eval: false
+#| code-line-numbers: 1-6|8-10|12-13|15-35|16|17-18|19-27|28|29|30|32-35|37-39
+# Make an ellmer chat object
+client_brand <- make_chat(
+  chat_fn,
+  system_prompt = system_prompt_brand,
+  ...
+)
+
+# Register tools for fonts and contrast
+client_brand$register_tool(get_fonts_combination_tool)
+client_brand$register_tool(check_contrast_tool)
+
+# Image paths
+img <- get_image_paths(img = img, browse = browse, type = type)
+
+# Chat
+if (type == "personal"){
+  # Either img is NULL
+  prompt <- paste0("Create a personal brand.yml. ", prompt)
+  # Or img has a single URL or a single path
+  if (!is.null(img)){
+    vec_color <- create_palette_from_image(img = img, show = FALSE)
+    prompt <- paste0(
+      prompt,
+      ". The initial color palette is: ",
+      paste(vec_color, collapse = ", ")
+    )
+  }
+  res <- client_brand$chat(prompt)
+} else if (type == "company"){
+  prompt <- paste0("Create a company brand.yml. ", prompt)
+  # Either img has one or more paths
+  if (!is.null(img)){
+    img_ellmer <- lapply(img, ellmer::content_image_file)
+    res <- do.call(client_brand$chat, c(prompt, img_ellmer))
+  }
+}
+
+# Make a brand.yml object
+brand.yml::as_brand_yml(as.character(res))
+```
+
+
+# Suggest Color Scales
+
+```{r}
+#| output: asis
+#| echo: false
+hexsession::make_tile(packages=c("ragnar","ggsci","paletteer"))
+```
+
+
+## RAG
+
+
+## How `suggest_color_scales` works?
+
+**Create a knowledge store for RAG**
+
+```{r}
+#| eval: false
+#| code-line-numbers: 1|3-6|8-13|15-18|20-24
+library(ragnar)
+
+# Find all the relevant pages
+base_url_paletteer <- "https://emilhvitfeldt.github.io/paletteer/index.html"
+pages_paletteer <- ragnar_find_links(base_url_paletteer)
+pp <- pages_paletteer[c(3, 5, 7, 8, 9)]
+
+## Embeddings model
+store_location <- "paletteer.ragnar.duckdb"
+store <- ragnar_store_create(
+  store_location,
+  embed = \(x) ragnar::embed_ollama(x, model = "embeddinggemma")
+)
+
+## Insert into knowledge store
+ragnar_store_insert(store, markdown_chunk(paletteer::palettes_c_names))
+ragnar_store_insert(store, markdown_chunk(paletteer::palettes_d_names))
+ragnar_store_insert(store, markdown_chunk(paletteer::palettes_dynamic_names))
+
+for (page in pp) {
+  message("ingesting: ", page)
+  chunks <- page |> read_as_markdown() |> markdown_chunk()
+  ragnar_store_insert(store, chunks)
+}
+```
+
+
+
+## How `suggest_color_scales` works?
+
+**Retrieve from the store**
+
+```{r}
+#| eval: false
+#| code-line-numbers: 1-5|7-12|13-15|17-21|23|25
+suggest_color_scales <- function(brand_yml,
+                                 pkg = c("paletteer", "ggsci"),
+                                 top_k = 8L,
+                                 chat_fn = ellmer::chat_google_gemini,
+                                 ...){
+  pkg = match.arg(pkg)
+  if (pkg == "ggsci"){
+    system_prompt_scs <- system_prompt_scs_ggsci
+  }
+  if (pkg == "paletteer"){
+    system_prompt_scs <- system_prompt_scs_paletteer
+  }
+  semantic_colors_list <- semantic_colors_as_hex_codes(brand_yml$color)
+  # Make one string
+  semantic_colors <- paste(names(semantic_colors_list), semantic_colors_list, sep = "=", collapse = ", ")
+
+  client_scs <- make_chat(
+    chat_fn,
+    system_prompt = system_prompt_scs,
+    ...
+  )
+
+  ragnar::ragnar_register_tool_retrieve(client_scs, brandthis_ragnar_store(pkg), top_k = top_k)
+
+  client_scs$chat(semantic_colors)
+}
+```
+
+## Suggested scales
+
+```{r}
+#| echo: false
+library(ggplot2)
+library(paletteer)
+library(patchwork)
+
+# Set a clean theme
+theme_set(brand.yml::theme_brand_ggplot2(
+  brand.yml::read_brand_yml()
+) + theme(panel.grid = element_blank()))
+
+# ============================================================================
+# DISCRETE PALETTES
+# ============================================================================
+
+# 1. Colorblind-friendly Okabe-Ito palette
+p1 <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 3, alpha = 0.8) +
+  scale_color_paletteer_d(palette = "khroma::dark", dynamic = 
+FALSE) +
+  theme(legend.position = "bottom")
+
+# ============================================================================
+# SEQUENTIAL PALETTES
+# ============================================================================
+
+# 3. Viridis - classic perceptually uniform palette
+set.seed(123)
+df_seq <- data.frame(
+  x = rep(1:10, each = 10),
+  y = rep(1:10, times = 10),
+  z = rnorm(100, mean = 50, sd = 20)
+)
+
+p3 <- ggplot(df_seq, aes(x = x, y = y, fill = z)) +
+  geom_tile() +
+  scale_color_paletteer_c(palette = "scico::hawaii") +
+  theme(legend.position = "right")
+
+
+# ============================================================================
+# DIVERGING PALETTES
+# ============================================================================
+
+# 6. RColorBrewer Red-Blue diverging
+set.seed(456)
+df_div <- data.frame(
+  x = rep(1:20, each = 20),
+  y = rep(1:20, times = 20),
+  value = rnorm(400, mean = 0, sd = 2)
+)
+
+p6 <- ggplot(df_div, aes(x = x, y = y, fill = value)) +
+  geom_tile() +
+  scale_fill_paletteer_c(palette = "scico::vik") +
+  theme(legend.position = "right")
+
+
+# ============================================================================
+# COMBINE ALL PLOTS
+# ============================================================================
+
+# Arrange plots in a grid
+
+combined <- p1 + p3 + p6 
+
+combined
+```
+
+
+## Suggested scales
+
+
+## Suggested scales
