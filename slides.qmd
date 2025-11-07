@@ -5,11 +5,18 @@ engine: knitr
 echo: true
 format: 
   revealjs:
+    chalkboard: true
     scrollable: true
     preview-links: true
     slide-number: true
     width: 1200
 ---
+
+## Powering Branding with LLMs
+
+* Tool Calling  
+* Retrieval-Augmented Generation (RAG)  
+* Structured Output
 
 ## You've Just Finished Your Analysis 🎉
 
@@ -68,55 +75,11 @@ You need to know CSS or SCSS!
 ![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWVjbmF5Y3FkNWU5eWc3N2lpZHloN2hxdzNmc3U2cGFibXRwYmVoaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hjKyzFBM7wstVxmhxq/giphy.gif)
 
 
-## Add some colors
-
-Use bootstrap variables 😱
-
-```{scss}
-//| code-line-numbers: 1|2-3|5|6-8
-//| eval: false
-
-/*-- scss:defaults --*/
-$body-bg: #EFEFF8;
-$navbar-bg: #6E2DAB;
-
-/*-- scss:rules --*/
-h1, h2, h3, h4, h5, h6 {
-  color: $navbar-bg
-}
-```
-
-
-## Change fonts
-
-```{scss}
-//| code-line-numbers: 1-2|8-12
-//| eval: false
-
-// Import fonts
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
-
-/*-- scss:defaults --*/
-$body-bg: #EFEFF8;
-$navbar-bg: #6E2DAB;
-
-// Base font for body text
-$font-family-sans-serif: "Quicksand", system-ui, -apple-system, sans-serif;
-
-// Font for headings
-$headings-font-family: "Quicksand", Georgia, serif;
-
-/*-- scss:rules --*/
-h1, h2, h3, h4, h5, h6 {
-  color: $navbar-bg
-}
-```
 
 
 ## Don't forget revealjs
 
 ```{scss}
-//| code-line-numbers: 14-16|23-30
 //| eval: false
 
 // Import fonts
@@ -286,7 +249,7 @@ Generate complete branding in a minute
 :::
 
 
-## createBranding app
+## createBranding app {.hidden}
 
 ```r
 # Install from GitHub
@@ -362,6 +325,11 @@ company_brand <- brandthis::create_brand(
 **Tool Calling**
 
 ![](tool-calling-right.svg)
+
+::: footer
+https://ellmer.tidyverse.org/articles/tool-calling.html
+:::
+
 
 ## How `create_brand` works? 
 
@@ -599,6 +567,11 @@ cp <- list(
 :::
 
 
+::: footer
+https://ellmer.tidyverse.org/articles/structured-data.html
+:::
+
+
 ## Using color palettes
 
 ```{r}
@@ -711,6 +684,6 @@ Questions?
 ### Connect
 
 - 📧 GitHub: @durraniu
-- 🦋 Blueskyy: @transport-talk.bsky.social
+- 🦋 Bluesky: @transport-talk.bsky.social
 - 📦 Package: github.com/durraniu/brandthis
 - 🌐 More: Check out the createBranding app (`brandthis::run_brand_app()`)

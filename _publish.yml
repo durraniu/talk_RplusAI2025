@@ -1,0 +1,4 @@
+- source: slides.qmd
+  quarto-pub:
+    - id: 855b1e8f-5bd2-4eef-8404-14f5ae035afb
+      url: https://dru.quarto.pub/brandthis
